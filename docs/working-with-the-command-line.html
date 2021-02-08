@@ -68,7 +68,7 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Introduction to the Command Line</a></li>
+<li><img src="docs/img/datalab-logo-full-color-rgb.png" width="100%"><a href="./">Introduction to the Command Line</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a></li>
@@ -121,7 +121,7 @@ To launch the Terminal application, go to:</p>
 <p>Applications -&gt; Utilities -&gt; Terminal</p>
 </blockquote>
 <p>When you launch the application, you will see something like this:</p>
-<p><img src="img/mac_terminal.png" /></p>
+<p><img src="./img/mac_terminal.png" /></p>
 <p>Windows users will use an application called Git Bash. Instructions for installing Git Bash are available <a href="https://ucdavisdatalab.github.io/workshop-introduction-to-git/complete.html#git-on-windows">here</a>. Please note that you are only required to complete a single section of these instructions (“Git on Windows”); no other sections are relevant for this particular workshop and you can disregard them.</p>
 <p>To launch Git Bash, go to:</p>
 <blockquote>
@@ -132,39 +132,39 @@ To launch the Terminal application, go to:</p>
 <p>Click on the Windows Start Menu, select Programs, and browse to Git Bash</p>
 </blockquote>
 <p>When you launch the application, you will see something like this:</p>
-<p><img src="img/bash.png" /></p>
+<p><img src="./img/bash.png" /></p>
 <div id="interacting-with-the-command-line" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Interacting with the command line</h2>
 <p>While it can look intimidating to those raised on the GUI, working with the command line is actually quite simple.
 Instead of pointing and clicking on things to make them happen, you type written commands.</p>
 <p>The figure below shows a new, empty command line interface in the Mac Terminal application</p>
-<p><img src="img/terminal.png" /></p>
+<p><img src="./img/terminal.png" /></p>
 <p>The command line prompt contains a lot of valuable information. The beginning of the line,
 “(base) MacPro-F5KWP01GF694” tells us exactly which computer we are communicating with.
 This may seem redundant, but it is actually possible to interact with computers other than the one you are typing on
 by connecting to them via the command line over the network.</p>
-<p><img src="img/terminal_machine_identifier.png" /></p>
+<p><img src="./img/terminal_machine_identifier.png" /></p>
 <p>The bit of information after the colon, in this example the “~” character tells us where in the computer’s
 filesystem we are. We’ll learn more about this later, for now you need to undersand that the “~” character means
 you are in your home directory.</p>
-<p><img src="img/terminal_file_path.png" /></p>
+<p><img src="./img/terminal_file_path.png" /></p>
 <p>The next piece of information we are given is the username under which we are logged into the computer, in this
 case, the local username “cstahmer”.</p>
-<p><img src="img/terminal_user.png" /></p>
+<p><img src="./img/terminal_user.png" /></p>
 <p>After the username, we see the “$” character. This is known as the <em>Command Prompt</em>. It is an indicator that the
 command line application is waiting for you to enter something. The Command Prompt character is used througout
 these materials when giving command examples. When working through materials, DO NOT ENTER the Command Prompt.
 It will already be there telling you that the computer is ready to receive your command.</p>
-<p><img src="img/terminal_command_prompt.png" /></p>
+<p><img src="./img/terminal_command_prompt.png" /></p>
 <p>Depending on your system and/or command line interface, you may or may not also see a solid or flashing box that
 appears after the Command Prompt. This is a <em>Cursor Position Indicator</em>, which tells you where the current cursor
 is in the terminal. This is useful if you need to go gack and correct an error. Generally speaking, you can’t click
 a mouse in a terminal app to edit text. You need to use your computer’s right and left arrows to move the cursor
 to the correct location and then make your edit.</p>
-<p><img src="img/terminal_cursor_position.png" /></p>
+<p><img src="./img/terminal_cursor_position.png" /></p>
 <p>As noted earlier, we interact with the command line by typing commands. The figure below shows an example of a
 simple command, “echo” being entered into the command line.</p>
-<p><img src="img/terminal_echo_command.png" /></p>
+<p><img src="./img/terminal_echo_command.png" /></p>
 <p>The “echo” command prints back to screen any text that you supply to the command It literally echoes your text.
 To execute, this or any command, you simply hit the “return” or “enter” key on your keyboard. You’ll see that when
 you execute a command line command the sytem performs the indicated operation, prints any output from the operation
@@ -244,7 +244,7 @@ know how to use them so that you can open, read, and write directly in the comma
 <p>Macs and Git Bash both ship with a text editor called <strong>Vim</strong> (other common editors include Emacs and Nano). To
 open a file with vim, type <code>vi</code> in a command line window, followed by the filename. If you want to create a new
 file, simply type the filename you’d like to use for that file after <code>vi</code>.</p>
-<p><img src="img/vim_open.png" /></p>
+<p><img src="./img/vim_open.png" /></p>
 <p>Vim works a bit differently than other text editors and word processors. It has a number of ‘modes,’ which provide
 different forms of interaction with a file’s data. We will focus on two modes, <strong>Normal</strong> mode and <strong>Insert</strong>. When
 you open a file with Vim, the program starts in Normal mode. This mode is command-based and, somewhat strangely,
@@ -252,14 +252,14 @@ it doesn’t let you insert text directly in the document (the reasons for this 
 design philosophy: we’re more likely to edit text on the command line than we are to write it).</p>
 <p>To insert text in your document, switch to Insert mode by pressing <code>i</code>. You can check whether you’re in Insert mode
 by looking at the bottom left hand portion of the window, which should read <code>-- INSERT --</code>.</p>
-<p><img src="img/vim_insert_mode.png" /></p>
+<p><img src="./img/vim_insert_mode.png" /></p>
 <p>Once you are done inserting text, pressing <code>ESC</code> (the Escape key) will bring you back to Normal mode. From here,
 you can save and quit your file, though these actions differ from other text editors and word processors: saving
 and quitting with Vim works through a sequence of key commands (or chords), which you enter from Normal mode.</p>
 <p>To save a file in Vim, make sure you are in Normal mode and then enter <code>:w</code>. Note the colon, which must be included.
 After you’ve entered this key sequence, in the bottom left hand corner of your window you should see “[filename]
 XL, XC written” (<em>L</em> stands for “lines” and <em>C</em> stands for “characters”).</p>
-<p><img src="img/vim_save.png" /></p>
+<p><img src="./img/vim_save.png" /></p>
 <p>To quit Vim, enter <code>:q</code>. This should take you back to your command line and, if you have created a new file, you
 will now see that file in your window.</p>
 <p>If you don’t want to save the changes you’ve made in a file, you can toss them out by typing <code>:q!</code> in place of
