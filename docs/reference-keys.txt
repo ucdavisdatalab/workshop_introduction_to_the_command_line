@@ -1,8 +1,7 @@
 tab:unnamed-chunk-1
-tab:unnamed-chunk-2
 working-with-the-command-line
 interacting-with-the-command-line
 common-command-line-commands
-text-editing-onand-the-command-line
+text-editing-with-the-command-line
 accessing-command-line-text-editors
 basic-vim-commands
