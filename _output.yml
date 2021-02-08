@@ -2,7 +2,7 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><img src="docs/img/datalab-logo-full-color-rgb.png" width="100%"><a href="./">Introduction to the Command Line</a></li>
+        <li><img src="./docs/img/datalab-logo-full-color-rgb.png" width="100%"><a href="./">Introduction to the Command Line</a></li>
       collapse: section
     sharing: no
     view: https://github.com/ucdavisdatalab/workshop_introduction_to_the_command_line/%s
