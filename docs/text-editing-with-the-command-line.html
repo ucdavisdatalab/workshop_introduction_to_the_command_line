@@ -32,7 +32,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="paths.html"/>
+<link rel="prev" href="file-paths.html"/>
 
 <script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
@@ -95,7 +95,11 @@
 <li class="chapter" data-level="3.2" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#interacting-with-the-command-line"><i class="fa fa-check"></i><b>3.2</b> Interacting with the Command Line</a></li>
 <li class="chapter" data-level="3.3" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#common-command-line-commands"><i class="fa fa-check"></i><b>3.3</b> Common Command Line Commands</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="paths.html"><a href="paths.html"><i class="fa fa-check"></i><b>4</b> Paths</a></li>
+<li class="chapter" data-level="4" data-path="file-paths.html"><a href="file-paths.html"><i class="fa fa-check"></i><b>4</b> File Paths</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="file-paths.html"><a href="file-paths.html#path-hierarchies"><i class="fa fa-check"></i><b>4.1</b> Path Hierarchies</a></li>
+<li class="chapter" data-level="4.2" data-path="file-paths.html"><a href="file-paths.html#absolute-vs.-relative-paths"><i class="fa fa-check"></i><b>4.2</b> Absolute vs. Relative Paths</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html"><i class="fa fa-check"></i><b>5</b> Text Editing with the Command Line</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#accessing-command-line-text-editors"><i class="fa fa-check"></i><b>5.1</b> Accessing Command Line Text Editors</a></li>
@@ -120,38 +124,51 @@
             <section class="normal" id="section-">
 <div id="text-editing-with-the-command-line" class="section level1" number="5">
 <h1><span class="header-section-number">5</span> Text Editing with the Command Line</h1>
-<p>The command line also features a variety of different text editors, similar in nature to Microsoft Word or Mac
-Pages but much more stripped down. These editors are only accessible from the command line and it is important to
-know how to use them so that you can open, read, and write directly in the command line window.</p>
+<p>Beyond the basic commands and navigation functions we’ve discussed so far, the
+command line also features the ability to edit files directly, usually by means
+of a text editor. These editors are similar in nature to Microsoft Word or Mac
+Pages but they’re much more stripped down and tend to work best with plain text
+files (<code>.txt</code> files, code files like <code>.R</code> or <code>.py</code>, etc.). These editors are only
+accessible from the command line and it is important to know how to use them so
+that you can open, read, and write directly in the command line window.</p>
 <div id="accessing-command-line-text-editors" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> Accessing Command Line Text Editors</h2>
-<p>Macs and Git Bash both ship with a text editor called <strong>Vim</strong> (other common editors include Emacs and Nano). To
-open a file with vim, type <code>vi</code> in a command line window, followed by the filename. If you want to create a new
-file, simply type the filename you’d like to use for that file after <code>vi</code>.</p>
+<p>Macs and <a href="installing-a-command-line-interface.html#program">PROGRAM</a> both ship with a text editor called <strong>Vim</strong> (other common
+editors include Emacs and Nano). To open a file with vim, type <code>vi</code> in a
+command line window, followed by the filen ame. If you want to create a new
+file, simply type the filen ame you’d like to use for that file after <code>vi</code>.</p>
 <p><img src="img/new_vim_file.png" /></p>
-<p>Vim works a bit differently than other text editors and word processors. It has a number of ‘modes,’ which provide
-different forms of interaction with a file’s data. We will focus on two modes, <strong>Normal</strong> mode and <strong>Insert</strong>. When
-you open a file with Vim, the program starts in Normal mode. This mode is command-based and, somewhat strangely,
-it doesn’t let you insert text directly in the document (the reasons for this have to do with Vim’s underlying
-design philosophy: we’re more likely to edit text on the command line than we are to write it).</p>
-<p>To insert text in your document, switch to Insert mode by pressing <code>i</code>. You can check whether you’re in Insert mode
-by looking at the bottom left hand portion of the window, which should read <code>-- INSERT --</code>.</p>
+<p>Vim works a bit differently than other text editors and word processors. It has
+a number of ‘modes,’ which provide different forms of interaction with a file’s
+data. We will focus on two modes, <strong>Normal</strong> mode and <strong>Insert</strong>. When you open
+a file with Vim, the program starts in Normal mode. This mode is command-based
+and, somewhat strangely, it doesn’t let you insert text directly in the document
+(the reasons for this have to do with Vim’s underlying design philosophy: we’re
+more likely to edit text on the command line than we are to write it).</p>
+<p>To insert text in your document, switch to Insert mode by pressing <code>i</code>. You can
+check whether you’re in Insert mode by looking at the bottom left hand portion
+of the window, which should read <code>-- INSERT --</code>.</p>
 <p><img src="img/hello_world_vim.png" /></p>
-<p>Once you are done inserting text, pressing <code>ESC</code> (the Escape key) will bring you back to Normal mode. From here,
-you can save and quit your file, though these actions differ from other text editors and word processors: saving
-and quitting with Vim works through a sequence of key commands (or chords), which you enter from Normal mode.</p>
-<p>To save a file in Vim, make sure you are in Normal mode and then enter <code>:w</code>. Note the colon, which must be included.
-After you’ve entered this key sequence, in the bottom left hand corner of your window you should see “[filename]
-XL, XC written” (<em>L</em> stands for “lines” and <em>C</em> stands for “characters”).</p>
+<p>Once you are done inserting text, pressing <code>ESC</code> (the Escape key) will bring you
+back to Normal mode. From here, you can save and quit your file, though these
+actions differ from other text editors and word processors: saving and quitting
+with Vim works through a sequence of key commands (or chords), which you enter
+from Normal mode.</p>
+<p>To save a file in Vim, make sure you are in Normal mode and then enter <code>:w</code>. Note
+the colon, which must be included.After you’ve entered this key sequence, in the
+bottom left hand corner of your window you should see “[filename] XL, XC written”
+(<em>L</em> stands for “lines” and <em>C</em> stands for “characters”).</p>
 <p><img src="img/saving_vim.png" /></p>
-<p>To quit Vim, enter <code>:q</code>. This should take you back to your command line and, if you have created a new file, you
-will now see that file in your window.</p>
-<p>If you don’t want to save the changes you’ve made in a file, you can toss them out by typing <code>:q!</code> in place of
-<code>:w</code> and then <code>:q</code>. Also, in Vim key sequences for save, quit, and hundreds of other commands can be chained
-together. For example, instead of separately inputting <code>:w</code> and <code>:q</code> to save and quit a file, you can use <code>:wq</code>,
-which will produce the same effect. There are dozens of base commands like this in Vim, and the program can be
-customized far beyond what you’ll typically need for basic command line usage. More information about this text
-editor can be found <a href="https://vim.fandom.com/wiki/Vim_Tips_Wiki">here</a>.</p>
+<p>To quit Vim, enter <code>:q</code>. This should take you back to your command line and, if
+you have created a new file, you will now see that file in your window.</p>
+<p>If you don’t want to save the changes you’ve made in a file, you can toss them
+out by typing <code>:q!</code> in place of <code>:w</code> and then <code>:q</code>. Also, in Vim key sequences
+for save, quit, and hundreds of other commands can be chained together. For
+example, instead of separately inputting <code>:w</code> and <code>:q</code> to save and quit a file,
+you can use <code>:wq</code>, which will produce the same effect. There are dozens of base
+commands like this in Vim, and the program can be customized far beyond what
+you’ll typically need for basic command line usage. More information about this
+text editor can be found <a href="https://vim.fandom.com/wiki/Vim_Tips_Wiki">here</a>.</p>
 </div>
 <div id="basic-vim-commands" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Basic Vim Commands</h2>
@@ -195,7 +212,7 @@ editor can be found <a href="https://vim.fandom.com/wiki/Vim_Tips_Wiki">here</a>
           </div>
         </div>
       </div>
-<a href="paths.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="file-paths.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>

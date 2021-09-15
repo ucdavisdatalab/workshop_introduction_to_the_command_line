@@ -11,7 +11,9 @@ working-with-the-command-line
 the-anatomy-of-the-command-line
 interacting-with-the-command-line
 common-command-line-commands
-paths
+file-paths
+path-hierarchies
+absolute-vs.-relative-paths
 text-editing-with-the-command-line
 accessing-command-line-text-editors
 basic-vim-commands

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Paths | Introduction to the Unix Command Line</title>
-  <meta name="description" content="4 Paths | Introduction to the Unix Command Line" />
+  <title>4 File Paths | Introduction to the Unix Command Line</title>
+  <meta name="description" content="4 File Paths | Introduction to the Unix Command Line" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Paths | Introduction to the Unix Command Line" />
+  <meta property="og:title" content="4 File Paths | Introduction to the Unix Command Line" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://ucdavisdatalab.github.io/workshop_introduction_to_the_command_line/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="ucdavisdatalab/workshop_introduction_to_the_command_line" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Paths | Introduction to the Unix Command Line" />
+  <meta name="twitter:title" content="4 File Paths | Introduction to the Unix Command Line" />
   
   
   
@@ -95,7 +95,11 @@
 <li class="chapter" data-level="3.2" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#interacting-with-the-command-line"><i class="fa fa-check"></i><b>3.2</b> Interacting with the Command Line</a></li>
 <li class="chapter" data-level="3.3" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#common-command-line-commands"><i class="fa fa-check"></i><b>3.3</b> Common Command Line Commands</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="paths.html"><a href="paths.html"><i class="fa fa-check"></i><b>4</b> Paths</a></li>
+<li class="chapter" data-level="4" data-path="file-paths.html"><a href="file-paths.html"><i class="fa fa-check"></i><b>4</b> File Paths</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="file-paths.html"><a href="file-paths.html#path-hierarchies"><i class="fa fa-check"></i><b>4.1</b> Path Hierarchies</a></li>
+<li class="chapter" data-level="4.2" data-path="file-paths.html"><a href="file-paths.html#absolute-vs.-relative-paths"><i class="fa fa-check"></i><b>4.2</b> Absolute vs. Relative Paths</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html"><i class="fa fa-check"></i><b>5</b> Text Editing with the Command Line</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#accessing-command-line-text-editors"><i class="fa fa-check"></i><b>5.1</b> Accessing Command Line Text Editors</a></li>
@@ -118,10 +122,86 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="paths" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Paths</h1>
-<p>[TO WRITE]</p>
+<div id="file-paths" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> File Paths</h1>
+<p>Due to the nature of its stripped down display, the command line interface can
+at times feel a bit static. But it offers much of the same interactivity that
+modern GUIs offer, including the ability to move around your computer. With GUIs,
+we tend to navigate with our mouses; on the command line, we’ll use our keyboard.
+The live workshop session will cover this in depth, but for now it’s important to
+have a working sense of how your files are structured.</p>
+<p>Your computer uses a <strong>directory structure</strong> to organize all of your files. This
+structure is like a map of all the places you can navigate to. Each file has an
+<strong>address</strong> on this map, and there is a <strong>path</strong> that leads to it. When you use a
+GUI, your computer does the work of determining which path to follow to find
+the file or folder you’d like to open, but performing the same operation with the
+command line interface requires us to manually specify where we’d like to go.</p>
+<p>We do this with the following syntax:</p>
+<pre><code>/this/is/a/path/to/your/file.txt</code></pre>
+<p>This is called a <strong>file path</strong>.</p>
+<div id="path-hierarchies" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Path Hierarchies</h2>
+<p>Importantly, the structure of your computer’s directory is <strong>hierarchical</strong>.
+Directories nest inside one another, and you need to have a sense of which
+directories are “above” or “below” the present file path to navigate with the
+command line interface.</p>
+<p>The top-most directory in your computer is called <code>root</code>. Unix systems denote it
+with the <code>/</code> character. It’s like the trunk of a tree: every directory in your
+computer branches off from it.</p>
+<p>A complication arises from the fact that directories can branch off from each
+other. Whenever you make a folder within another folder—or a <strong>subdirectory</strong>—
+you’ve created another branch in the tree, one which is at the same time a branch
+of <code>root</code> <em>and</em> a branch of whatever directory you’re currently in. For example,
+this is the structure of the practice exercise we’ll be using during our live
+session:</p>
+<pre><code>.                               top of the directory
+├── instructions.md             file in the top of the directory
+├── instructions.pdf            &quot;&quot;
+└── level_1                     first subdirectory
+    ├── level_2a                a second subdirectory, below level_1
+    │   ├── 2.txt               file in the second subdirectory
+    │   └── extra_file.txt      &quot;&quot;
+    ├── level_2b                another subdirectory, at the same level as level_2a
+    │   └── level_3             third subdirectory, below level_2a and level_2b
+    │       └── 1.txt           file in the third subdirectory
+    └── wrong_name.txt          file in first subdirectory</code></pre>
+<p>As you can see, this can get complicated! When you’re first getting started with
+the command line, it’s easy to feel a little lost and forget where you are in
+your computer. We’ll discuss some strategies to help with this in the live
+session, but know for the moment that the <code>pwd</code> command will always tell you where
+you are relative to <code>root</code>:</p>
+<pre><code>$ pwd
+/here/is/where/you/are/located/in/your/computer</code></pre>
+</div>
+<div id="absolute-vs.-relative-paths" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Absolute vs. Relative Paths</h2>
+<p>The path above begins with <code>/</code>, which, remember, is <code>root</code>. When you see a path
+that begins with <code>/</code>, it’s showing you the full, or <strong>absolute</strong> location of a
+directory or file. No matter where you are in your computer, no matter how deep
+into a series of subdirectories you may be, if you used this absolute path with
+a navigation command, you could go straight to the location it indicates.</p>
+<p>By contrast, a <strong>relative path</strong> is context-specific. It depends on wherever you
+are in your computer. Unix uses some shorthand for this. <code>.</code> denotes the current
+location in your computer, while <code>..</code> denotes the directory above that location.
+We can use this shorthand to avoid having to type out the entire path to a file
+or directory (this is useful if you’re far away from <code>root</code>). To continue with
+the example from above, if you’re at <code>computer</code>:</p>
+<pre><code>/here/is/where/you/are/located/in/your/computer
+                                       ^^^^^^^^</code></pre>
+<p>And you want to get to <code>located</code>:</p>
+<pre><code>/here/is/where/you/are/located/in/your/computer
+                       ^^^^^^^</code></pre>
+<p>You could use an absolute path to get there, which would be:</p>
+<pre><code>/here/is/where/you/are/located</code></pre>
+<p>Or, you could use a relative path:</p>
+<pre><code>../../../</code></pre>
+<p>This would take you three directories up from <code>computer</code>, which, as you can see
+above, is <code>located</code> (count the names between backslashes). That’s much shorter,
+though it comes with a trade-off: those <code>..</code> sequences are pretty hard to read
+without context, and it’s easy to get confused. We’ll discuss this more in our
+live session.</p>
 
+</div>
 </div>
             </section>
 
@@ -151,7 +231,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/ucdavisdatalab/workshop_introduction_to_the_command_line/edit/main/04_paths.Rmd",
+"link": "https://github.com/ucdavisdatalab/workshop_introduction_to_the_command_line/edit/main/04_file-paths.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -159,7 +239,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/ucdavisdatalab/workshop_introduction_to_the_command_line/blob/main/04_paths.Rmd",
+"link": "https://github.com/ucdavisdatalab/workshop_introduction_to_the_command_line/blob/main/04_file-paths.Rmd",
 "text": null
 },
 "download": null,
