@@ -1,7 +1,17 @@
 tab:unnamed-chunk-1
+preliminaries
+interactive-session-information
+about-this-reader
+objectives-for-this-workshop
+prerequisites
+installing-a-command-line-interface
+program
+program-installation-instructions
 working-with-the-command-line
+the-anatomy-of-the-command-line
 interacting-with-the-command-line
 common-command-line-commands
+paths
 text-editing-with-the-command-line
 accessing-command-line-text-editors
 basic-vim-commands

@@ -4,36 +4,37 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1 Working with the Command Line | Introduction to the Command Line</title>
-  <meta name="description" content="1 Working with the Command Line | Introduction to the Command Line" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <title>3 Working with the Command Line | Introduction to the Unix Command Line</title>
+  <meta name="description" content="3 Working with the Command Line | Introduction to the Unix Command Line" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1 Working with the Command Line | Introduction to the Command Line" />
+  <meta property="og:title" content="3 Working with the Command Line | Introduction to the Unix Command Line" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://ucdavisdatalab.github.io/adventures_in_data_science/" />
+  <meta property="og:url" content="https://ucdavisdatalab.github.io/workshop_introduction_to_the_command_line/" />
   
   
   <meta name="github-repo" content="ucdavisdatalab/workshop_introduction_to_the_command_line" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1 Working with the Command Line | Introduction to the Command Line" />
+  <meta name="twitter:title" content="3 Working with the Command Line | Introduction to the Unix Command Line" />
   
   
   
 
-<meta name="author" content="Dr. Carl Stahmer and Dr. Tyler Shoemaker" />
+<meta name="author" content="Tyler Shoemaker" />
+<meta name="author" content="Carl Stahmer" />
 
 
-<meta name="date" content="2021-02-09" />
+<meta name="date" content="2021-09-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="text-editing-with-the-command-line.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<link rel="prev" href="installing-a-command-line-interface.html"/>
+<link rel="next" href="paths.html"/>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,8 +52,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
 
 
 
@@ -71,19 +73,33 @@
 <li><a href="https://datalab.ucdavis.edu/">
   <img src="img/datalab-logo-full-color-rgb.png" style="height: 100%; width: 100%; object-fit: contain" />
 </a></li>
-<li><a href="./">Introduction to the Command Line</a></li>
+<li><a href="./">Introduction to the Unix Command Line</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a></li>
-<li class="chapter" data-level="1" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html"><i class="fa fa-check"></i><b>1</b> Working with the Command Line</a>
+<li class="chapter" data-level="1" data-path="preliminaries.html"><a href="preliminaries.html"><i class="fa fa-check"></i><b>1</b> Preliminaries</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#interacting-with-the-command-line"><i class="fa fa-check"></i><b>1.1</b> Interacting with the command line</a></li>
-<li class="chapter" data-level="1.2" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#common-command-line-commands"><i class="fa fa-check"></i><b>1.2</b> Common Command Line Commands</a></li>
+<li class="chapter" data-level="1.1" data-path="preliminaries.html"><a href="preliminaries.html#interactive-session-information"><i class="fa fa-check"></i><b>1.1</b> Interactive Session Information</a></li>
+<li class="chapter" data-level="1.2" data-path="preliminaries.html"><a href="preliminaries.html#about-this-reader"><i class="fa fa-check"></i><b>1.2</b> About this Reader</a></li>
+<li class="chapter" data-level="1.3" data-path="preliminaries.html"><a href="preliminaries.html#objectives-for-this-workshop"><i class="fa fa-check"></i><b>1.3</b> Objectives for this Workshop</a></li>
+<li class="chapter" data-level="1.4" data-path="preliminaries.html"><a href="preliminaries.html#prerequisites"><i class="fa fa-check"></i><b>1.4</b> Prerequisites</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html"><i class="fa fa-check"></i><b>2</b> Text Editing with the Command Line</a>
+<li class="chapter" data-level="2" data-path="installing-a-command-line-interface.html"><a href="installing-a-command-line-interface.html"><i class="fa fa-check"></i><b>2</b> Installing a Command Line Interface</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#accessing-command-line-text-editors"><i class="fa fa-check"></i><b>2.1</b> Accessing Command Line Text Editors</a></li>
-<li class="chapter" data-level="2.2" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#basic-vim-commands"><i class="fa fa-check"></i><b>2.2</b> Basic Vim Commands</a></li>
+<li class="chapter" data-level="2.1" data-path="installing-a-command-line-interface.html"><a href="installing-a-command-line-interface.html#program"><i class="fa fa-check"></i><b>2.1</b> PROGRAM</a></li>
+<li class="chapter" data-level="2.2" data-path="installing-a-command-line-interface.html"><a href="installing-a-command-line-interface.html#program-installation-instructions"><i class="fa fa-check"></i><b>2.2</b> PROGRAM INSTALLATION INSTRUCTIONS</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html"><i class="fa fa-check"></i><b>3</b> Working with the Command Line</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#the-anatomy-of-the-command-line"><i class="fa fa-check"></i><b>3.1</b> The Anatomy of the Command Line</a></li>
+<li class="chapter" data-level="3.2" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#interacting-with-the-command-line"><i class="fa fa-check"></i><b>3.2</b> Interacting with the Command Line</a></li>
+<li class="chapter" data-level="3.3" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#common-command-line-commands"><i class="fa fa-check"></i><b>3.3</b> Common Command Line Commands</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="paths.html"><a href="paths.html"><i class="fa fa-check"></i><b>4</b> Paths</a></li>
+<li class="chapter" data-level="5" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html"><i class="fa fa-check"></i><b>5</b> Text Editing with the Command Line</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#accessing-command-line-text-editors"><i class="fa fa-check"></i><b>5.1</b> Accessing Command Line Text Editors</a></li>
+<li class="chapter" data-level="5.2" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#basic-vim-commands"><i class="fa fa-check"></i><b>5.2</b> Basic Vim Commands</a></li>
 </ul></li>
 </ul>
 
@@ -94,7 +110,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to the Command Line</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to the Unix Command Line</a>
           </h1>
         </div>
 
@@ -102,89 +118,106 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="working-with-the-command-line" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Working with the Command Line</h1>
-<p>Most users interact with their computer through a Graphical User Interface (GUI) that allows them to use a mouse,
-keyboard, and graphical elements on screen (such as file menus, pictures of folders and files, etc.) to perform
-their work. Users tend to conflate their Operating System and their GUI because computer hardware and software
-manufacturers tightly pack these two concerns as a convenience to users. But the <em>Windows 10</em> or <em>Mac Big Sur</em>
-operating system that makes your computer work and the <em>Windows 10</em> or <em>Mac Big Sur</em> GUI that you interact with
-are in fact completely different and separable software packages and it is possible to use different
-methods/software to interact with your computer than the stock, tightly coupled GUI that launches automatically
-when you turn on your computer.</p>
-<p>Because computer manufacturers like Windows and Mac devote so many resources to the development of their system
-GUIs, there are few viable (at present, none, commercially available) competing GUIs for these platforms.
-This is not the case in the Linux world, however, where users have several system GUI packages from which to
-choose and can seamlessly switch between them as desired. Despite the lack of competition/choice on the GUI front
-when it comes to interacting with your computer, there are other, non-graphical ways of communicating directly with
-your operating system that exist for all operating systems. We call these “command line” interfaces. The command
-line offers a text-only, non graphical means of interacting with your computer. In the early days of computing,
-all user interaction with the computer happened at the command line. In the current days of graphical user
-interfaces, using the command line requires you to launch a special program that provides command line access.</p>
-<p><strong>Mac users</strong> will use an application called “Terminal” which ships by default with the Mac operating system.
-To launch the Terminal application, go to:</p>
+<div id="working-with-the-command-line" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Working with the Command Line</h1>
+<p>Most people interact with their computer through a graphical user interface, or
+GUI, which allows them to use a mouse, keyboard, and graphical elements on screen
+(such as file menus, pictures of folders and files, etc.) as they do their work.
+We tend to conflate our operating systems and their GUIs because computer
+hardware and software manufacturers tightly pack these two things together as a
+convenience to users. But the operating system that makes your computer work
+(Windows 10, Mac Big Sur, etc.) and the GUI that you interact with are, in fact,
+completely different and separable software packages; it is possible to use
+different methods/software to interact with your computer than the stock GUI that
+launches automatically when you turn it on.</p>
+<p>On such method is the “command line” interface. The command line offers a
+text-only, non-graphical means of interacting with your computer, acting somewhat
+like a typewriter (rather than a <em>window</em> or <em>desktop</em>, as the prevailing
+metaphors for GUIs go). In the early days of computing, all user interaction with
+your computer happened at the command line. But during the 1980s, computer
+manufacturers—with Apple at the lead—made a big push to convert their machines
+to the windowing systems we know today. The command line, they felt, was too
+difficult for users to understand and this, in turn, would hamper computer sales.</p>
+<p>Nowadays, there are few viable (and at present, almost no commercially available)
+GUIs that can compete with the predominant systems of Macs and PCs. While this is
+not the case for Linux machines, people are by and large locked into the GUIs that
+come pre-installed on their machines. Command line interfaces are, however,
+available, and some are even still installed on popular computer hardware.</p>
+<p>Using these interfaces require you to launch a special program.</p>
+<p><strong>Mac users</strong> will use an application called “Terminal,” which ships by default
+on macOS. To launch Terminal, go to:</p>
 <blockquote>
 <p>Applications -&gt; Utilities -&gt; Terminal</p>
 </blockquote>
 <p>When you launch the application, you will see something like this:</p>
-<p><img src="./img/mac_terminal.png" /></p>
-<p><strong>Windows</strong> users will use an application called Git Bash. Instructions for installing Git Bash are available <a href="https://ucdavisdatalab.github.io/workshop-introduction-to-git/complete.html#git-on-windows">here</a>. Please note that you are only required to complete a single section of these instructions (“Git on Windows”); no other sections are relevant for this particular workshop and you can disregard them.</p>
-<p>To launch Git Bash, go to:</p>
+<p><img src="img/prompt.png" /></p>
+<p><strong>Windows</strong> users will use an application called <a href="installing-a-command-line-interface.html#program">PROGRAM</a>. Instructions for
+installing this program are on the previous page.</p>
+<p>To launch <a href="installing-a-command-line-interface.html#program">PROGRAM</a>, go to:</p>
 <blockquote>
-<p>Click on the Windows Start Menu and search for “Git Bash”</p>
+<p>Click on the Windows Start Menu and search for “<a href="installing-a-command-line-interface.html#program">PROGRAM</a>”</p>
 </blockquote>
 <p>Alternatively,</p>
 <blockquote>
-<p>Click on the Windows Start Menu, select Programs, and browse to Git Bash</p>
+<p>Click on the Windows Start Menu, select Programs, and browse to <a href="installing-a-command-line-interface.html#program">PROGRAM</a></p>
 </blockquote>
 <p>When you launch the application, you will see something like this:</p>
-<p><img src="./img/bash.png" /></p>
-<div id="interacting-with-the-command-line" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Interacting with the command line</h2>
-<p>While it can look intimidating to those raised on the GUI, working with the command line is actually quite simple.
-Instead of pointing and clicking on things to make them happen, you type written commands.</p>
-<p>The figure below shows a new, empty command line interface in the Mac Terminal application</p>
-<p><img src="./img/terminal.png" /></p>
-<p>The command line prompt contains a lot of valuable information. The beginning of the line,
-“(base) MacPro-F5KWP01GF694” tells us exactly which computer we are communicating with.
-This may seem redundant, but it is actually possible to interact with computers other than the one you are typing on
-by connecting to them via the command line over the network.</p>
-<p><img src="./img/terminal_machine_identifier.png" /></p>
-<p>The bit of information after the colon, in this example the “~” character tells us where in the computer’s
-filesystem we are. We’ll learn more about this later, for now you need to undersand that the “~” character means
-you are in your home directory.</p>
-<p><img src="./img/terminal_file_path.png" /></p>
-<p>The next piece of information we are given is the username under which we are logged into the computer, in this
-case, the local username “cstahmer”.</p>
-<p><img src="./img/terminal_user.png" /></p>
-<p>After the username, we see the “$” character. This is known as the <em>Command Prompt</em>. It is an indicator that the
-command line application is waiting for you to enter something. The Command Prompt character is used througout
-these materials when giving command examples. When working through materials, DO NOT ENTER the Command Prompt.
-It will already be there telling you that the computer is ready to receive your command.</p>
-<p><img src="./img/terminal_command_prompt.png" /></p>
-<p>Depending on your system and/or command line interface, you may or may not also see a solid or flashing box that
-appears after the Command Prompt. This is a <em>Cursor Position Indicator</em>, which tells you where the current cursor
-is in the terminal. This is useful if you need to go gack and correct an error. Generally speaking, you can’t click
-a mouse in a terminal app to edit text. You need to use your computer’s right and left arrows to move the cursor
-to the correct location and then make your edit.</p>
-<p><img src="./img/terminal_cursor_position.png" /></p>
-<p>As noted earlier, we interact with the command line by typing commands. The figure below shows an example of a
-simple command, “echo” being entered into the command line.</p>
-<p><img src="./img/terminal_echo_command.png" /></p>
-<p>The “echo” command prints back to screen any text that you supply to the command It literally echoes your text.
-To execute, this or any command, you simply hit the “return” or “enter” key on your keyboard. You’ll see that when
-you execute a command line command the sytem performs the indicated operation, prints any output from the operation
-to screen and then delivers a new command line prompt.</p>
-<p><img src="./img/terminal_echo_output.png" /></p>
-<p>Note that depending on your particular system and/or command line interface, things might look slightly different
-on your computer. However, the basic presentation and function as described above will be the same.</p>
+<p><img src="img/bash.png" /></p>
+<div id="the-anatomy-of-the-command-line" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> The Anatomy of the Command Line</h2>
+<p>While the command line can look intimidating to those raised on the GUI, using
+it is actually quite simple. Instead of pointing and clicking on things to make
+them happen, you type in your commands.</p>
+<p>Let’s return to the window that opens when you start Terminal or <a href="installing-a-command-line-interface.html#program">PROGRAM</a>.</p>
+<p><img src="img/prompt.png" /></p>
+<p>Here, we see the command line <strong>prompt</strong>. You’ll enter your commands here. But
+before doing so, let’s point out some valuable information contained within
+the prompt itself. The beginning of the line, <code>tshoe@ds</code>, tells us the current
+user (<code>tshoe</code>) and current computer (<code>ds</code>). This may seem redundant, but with the
+command line it is possible to interact with remote computers via a network, so
+it’s helpful to have this information displayed as a reference point.</p>
+<p>The bit of information after the colon (in this example, the <code>~</code> character) tells
+us where in the computer’s filesystem we are. We’ll discuss this later. For now,
+just keep in mind that you can look here to find your current location. In this
+case, <code>~</code> means you are in your <strong>home</strong> directory.</p>
+<p><img src="img/prompt_home_highlight.png" />
+After the location, we see the <code>$</code> character. It is an indicator that lets you
+know the command line application is waiting for you to enter something. (Note
+that you do not need to type this character, it will appear automatically, but
+the examples below include it to emulate what you’ll see onscreen)</p>
+<p>Depending on your system and/or command line interface, you may or may not also
+see a solid or flashing box that appears after the prompt character. This is a
+<strong>cursor position indicator</strong> and it tells you where the current cursor is in
+the terminal. This is useful if you need to go back and correct and error.
+Generally speaking, you can’t click around with a mouse in this kind of interface.
+Instead, you’ll use your computer’s <code>left</code> and <code>right</code> arrows to move the cursor
+to the correct location and make any changes from there.</p>
 </div>
-<div id="common-command-line-commands" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Common Command Line Commands</h2>
-<p>During our hands-on workshop session we will practice using the following command line commands. Be prepared to
-have this page ready as a reference during class to make things easier.</p>
+<div id="interacting-with-the-command-line" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Interacting with the Command Line</h2>
+<p>As noted earlier, we interact with the command line by typing in our commands.
+For example:</p>
+<pre><code>$ echo</code></pre>
+<p>…will print back to screen any text that you supply to the command. It literally
+echoes your text:</p>
+<pre><code>$ echo Hello world!
+Hello world!
+$</code></pre>
+<p>To execute this, or any command, you simply hit the <code>Return</code>/<code>Enter</code> key on your
+keyboard. You’ll see that when you execute a command, the system will perform the
+indicated operation, print any output from that operation to screen, and deliver
+a new command line prompt.</p>
+<p>Note that depending on your particular system and/or command line interface,
+things might look slightly different on your computer. However, the basic
+presentation and function as described above will be the same.</p>
+</div>
+<div id="common-command-line-commands" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Common Command Line Commands</h2>
+<p>During our hands-on workshop session we will practice using several commands.
+Be prepared to have this page ready as a reference during class to make things
+easier.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-1">Table 1.1: </span></caption>
+<caption><span id="tab:unnamed-chunk-1">Table 3.1: </span></caption>
 <thead>
 <tr class="header">
 <th align="left"></th>
@@ -240,7 +273,7 @@ have this page ready as a reference during class to make things easier.</p>
 </tr>
 </tbody>
 </table>
-<p>For a more complete list of Unix Commands, see the <a href="http://www.mathcs.emory.edu/~valerie/courses/fall10/155/resources/unix_cheatsheet.html">Unix Cheat Sheet</a>.</p>
+<p>For a more complete list of Unix Commands, see the <a href="http://www.mathcs.emory.edu/~valerie/courses/fall10/155/resources/unix_cheatsheet.html.">Unix Cheat Sheet</a>.</p>
 
 </div>
 </div>
@@ -249,8 +282,8 @@ have this page ready as a reference during class to make things easier.</p>
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="text-editing-with-the-command-line.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="installing-a-command-line-interface.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="paths.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -272,7 +305,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/ucdavisdatalab/workshop_introduction_to_the_command_line/edit/main/01_command-line.Rmd",
+"link": "https://github.com/ucdavisdatalab/workshop_introduction_to_the_command_line/edit/main/03_working-with-the-command-line.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -280,7 +313,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/ucdavisdatalab/workshop_introduction_to_the_command_line/blob/main/01_command-line.Rmd",
+"link": "https://github.com/ucdavisdatalab/workshop_introduction_to_the_command_line/blob/main/03_working-with-the-command-line.Rmd",
 "text": null
 },
 "download": null,

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Text Editing with the Command Line | Introduction to the Unix Command Line</title>
-  <meta name="description" content="5 Text Editing with the Command Line | Introduction to the Unix Command Line" />
+  <title>1 Preliminaries | Introduction to the Unix Command Line</title>
+  <meta name="description" content="1 Preliminaries | Introduction to the Unix Command Line" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Text Editing with the Command Line | Introduction to the Unix Command Line" />
+  <meta property="og:title" content="1 Preliminaries | Introduction to the Unix Command Line" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://ucdavisdatalab.github.io/workshop_introduction_to_the_command_line/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="ucdavisdatalab/workshop_introduction_to_the_command_line" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Text Editing with the Command Line | Introduction to the Unix Command Line" />
+  <meta name="twitter:title" content="1 Preliminaries | Introduction to the Unix Command Line" />
   
   
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="paths.html"/>
-
+<link rel="prev" href="index.html"/>
+<link rel="next" href="installing-a-command-line-interface.html"/>
 <script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -118,75 +118,47 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="text-editing-with-the-command-line" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> Text Editing with the Command Line</h1>
-<p>The command line also features a variety of different text editors, similar in nature to Microsoft Word or Mac
-Pages but much more stripped down. These editors are only accessible from the command line and it is important to
-know how to use them so that you can open, read, and write directly in the command line window.</p>
-<div id="accessing-command-line-text-editors" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Accessing Command Line Text Editors</h2>
-<p>Macs and Git Bash both ship with a text editor called <strong>Vim</strong> (other common editors include Emacs and Nano). To
-open a file with vim, type <code>vi</code> in a command line window, followed by the filename. If you want to create a new
-file, simply type the filename you’d like to use for that file after <code>vi</code>.</p>
-<p><img src="img/new_vim_file.png" /></p>
-<p>Vim works a bit differently than other text editors and word processors. It has a number of ‘modes,’ which provide
-different forms of interaction with a file’s data. We will focus on two modes, <strong>Normal</strong> mode and <strong>Insert</strong>. When
-you open a file with Vim, the program starts in Normal mode. This mode is command-based and, somewhat strangely,
-it doesn’t let you insert text directly in the document (the reasons for this have to do with Vim’s underlying
-design philosophy: we’re more likely to edit text on the command line than we are to write it).</p>
-<p>To insert text in your document, switch to Insert mode by pressing <code>i</code>. You can check whether you’re in Insert mode
-by looking at the bottom left hand portion of the window, which should read <code>-- INSERT --</code>.</p>
-<p><img src="img/hello_world_vim.png" /></p>
-<p>Once you are done inserting text, pressing <code>ESC</code> (the Escape key) will bring you back to Normal mode. From here,
-you can save and quit your file, though these actions differ from other text editors and word processors: saving
-and quitting with Vim works through a sequence of key commands (or chords), which you enter from Normal mode.</p>
-<p>To save a file in Vim, make sure you are in Normal mode and then enter <code>:w</code>. Note the colon, which must be included.
-After you’ve entered this key sequence, in the bottom left hand corner of your window you should see “[filename]
-XL, XC written” (<em>L</em> stands for “lines” and <em>C</em> stands for “characters”).</p>
-<p><img src="img/saving_vim.png" /></p>
-<p>To quit Vim, enter <code>:q</code>. This should take you back to your command line and, if you have created a new file, you
-will now see that file in your window.</p>
-<p>If you don’t want to save the changes you’ve made in a file, you can toss them out by typing <code>:q!</code> in place of
-<code>:w</code> and then <code>:q</code>. Also, in Vim key sequences for save, quit, and hundreds of other commands can be chained
-together. For example, instead of separately inputting <code>:w</code> and <code>:q</code> to save and quit a file, you can use <code>:wq</code>,
-which will produce the same effect. There are dozens of base commands like this in Vim, and the program can be
-customized far beyond what you’ll typically need for basic command line usage. More information about this text
-editor can be found <a href="https://vim.fandom.com/wiki/Vim_Tips_Wiki">here</a>.</p>
+<div id="preliminaries" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Preliminaries</h1>
+<p>This workshop covers the basics of using the Unix command line interface. It is
+a <strong>hybrid workshop</strong>. First, independently work through this online tutorial at
+your own pace. Next, join us for the live interactive session (details below),
+during which we will learn to interact with the files and file structures of our
+computers in new ways.</p>
+<div id="interactive-session-information" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Interactive Session Information</h2>
+<p>The workshop includes a live, interactive session, to be held via Zoom on
+<strong>Thursday, November 4th from 12-2pm</strong>. Zoom login information will be sent to
+all registered participants via email; reach out to <a href="mailto:datalab-training@ucdavis.edu" class="email">datalab-training@ucdavis.edu</a>
+the day prior if you received a registration confirmation but have not received
+your Zoom link.</p>
 </div>
-<div id="basic-vim-commands" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Basic Vim Commands</h2>
-<table>
-<caption><span id="tab:unnamed-chunk-1">Table 3.1: </span></caption>
-<thead>
-<tr class="header">
-<th align="left">Command</th>
-<th align="left">Function</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">esc</td>
-<td align="left">Enter Normal mode.</td>
-</tr>
-<tr class="even">
-<td align="left">i</td>
-<td align="left">Enter Insert mdoe.</td>
-</tr>
-<tr class="odd">
-<td align="left">:w</td>
-<td align="left">Save.</td>
-</tr>
-<tr class="even">
-<td align="left">:q</td>
-<td align="left">Quit.</td>
-</tr>
-<tr class="odd">
-<td align="left">:q!</td>
-<td align="left">Quit without saving.</td>
-</tr>
-</tbody>
-</table>
-<p>For a more complete list of Vim commands, see this <a href="https://vim.rtorr.com/">Cheat Sheet</a>.</p>
+<div id="about-this-reader" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> About this Reader</h2>
+<p>This reader provides background information that will help participants to better
+understand the concepts introduced during the interactive session. It also
+includes information to help you successfully install software for the workshop,
+<strong>which must be completed prior to the interactive session</strong> (note: software setup
+is only necessary for Windows users).</p>
+</div>
+<div id="objectives-for-this-workshop" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Objectives for this Workshop</h2>
+<p>By the end of the workshop, learners should be able to:</p>
+<ul>
+<li>Explain the directory structure of their computers</li>
+<li>Navigate across and within files and directories</li>
+<li>Create, copy, and delete files</li>
+<li>Use command line tools to edit files</li>
+<li>Identify where to go for help and to learn more</li>
+</ul>
+</div>
+<div id="prerequisites" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Prerequisites</h2>
+<p>No prior coding experience is required for this workshop. Participants should
+have a computer with a Unix shell scripting program (Terminal, Bash, etc.)
+installed and the latest version of Zoom. Windows users will need to install a
+Unix terminal ahead of the session. Instructions for doing so are on the
+following page.</p>
 
 </div>
 </div>
@@ -195,8 +167,8 @@ editor can be found <a href="https://vim.fandom.com/wiki/Vim_Tips_Wiki">here</a>
           </div>
         </div>
       </div>
-<a href="paths.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="installing-a-command-line-interface.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -218,7 +190,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/ucdavisdatalab/workshop_introduction_to_the_command_line/edit/main/05_text-editing-with-the-command-line.Rmd",
+"link": "https://github.com/ucdavisdatalab/workshop_introduction_to_the_command_line/edit/main/01_overview.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -226,7 +198,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/ucdavisdatalab/workshop_introduction_to_the_command_line/blob/main/05_text-editing-with-the-command-line.Rmd",
+"link": "https://github.com/ucdavisdatalab/workshop_introduction_to_the_command_line/blob/main/01_overview.Rmd",
 "text": null
 },
 "download": null,
