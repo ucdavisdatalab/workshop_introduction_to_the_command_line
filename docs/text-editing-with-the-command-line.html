@@ -25,7 +25,7 @@
 <meta name="author" content="Carl Stahmer" />
 
 
-<meta name="date" content="2021-09-14" />
+<meta name="date" content="2021-09-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -93,7 +93,9 @@
 <ul>
 <li class="chapter" data-level="3.1" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#the-anatomy-of-the-command-line"><i class="fa fa-check"></i><b>3.1</b> The Anatomy of the Command Line</a></li>
 <li class="chapter" data-level="3.2" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#interacting-with-the-command-line"><i class="fa fa-check"></i><b>3.2</b> Interacting with the Command Line</a></li>
-<li class="chapter" data-level="3.3" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#common-command-line-commands"><i class="fa fa-check"></i><b>3.3</b> Common Command Line Commands</a></li>
+<li class="chapter" data-level="3.3" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#command-line-syntax"><i class="fa fa-check"></i><b>3.3</b> Command Line Syntax</a></li>
+<li class="chapter" data-level="3.4" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#stopping-a-command"><i class="fa fa-check"></i><b>3.4</b> Stopping a Command</a></li>
+<li class="chapter" data-level="3.5" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#common-command-line-commands"><i class="fa fa-check"></i><b>3.5</b> Common Command Line Commands</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="file-paths.html"><a href="file-paths.html"><i class="fa fa-check"></i><b>4</b> File Paths</a>
 <ul>
@@ -135,8 +137,8 @@ that you can open, read, and write directly in the command line window.</p>
 <h2><span class="header-section-number">5.1</span> Accessing Command Line Text Editors</h2>
 <p>Macs and <a href="installing-a-command-line-interface.html#program">PROGRAM</a> both ship with a text editor called <strong>Vim</strong> (other common
 editors include Emacs and Nano). To open a file with vim, type <code>vi</code> in a
-command line window, followed by the filen ame. If you want to create a new
-file, simply type the filen ame you’d like to use for that file after <code>vi</code>.</p>
+command line window, followed by the file name. If you want to create a new
+file, simply type the file name you’d like to use for that file after <code>vi</code>.</p>
 <p><img src="img/new_vim_file.png" /></p>
 <p>Vim works a bit differently than other text editors and word processors. It has
 a number of ‘modes,’ which provide different forms of interaction with a file’s
@@ -156,7 +158,7 @@ with Vim works through a sequence of key commands (or chords), which you enter
 from Normal mode.</p>
 <p>To save a file in Vim, make sure you are in Normal mode and then enter <code>:w</code>. Note
 the colon, which must be included.After you’ve entered this key sequence, in the
-bottom left hand corner of your window you should see “[filename] XL, XC written”
+bottom left hand corner of your window you should see “[file name] XL, XC written”
 (<em>L</em> stands for “lines” and <em>C</em> stands for “characters”).</p>
 <p><img src="img/saving_vim.png" /></p>
 <p>To quit Vim, enter <code>:q</code>. This should take you back to your command line and, if

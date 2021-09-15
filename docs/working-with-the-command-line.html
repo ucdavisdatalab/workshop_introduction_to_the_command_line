@@ -25,7 +25,7 @@
 <meta name="author" content="Carl Stahmer" />
 
 
-<meta name="date" content="2021-09-14" />
+<meta name="date" content="2021-09-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -93,7 +93,9 @@
 <ul>
 <li class="chapter" data-level="3.1" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#the-anatomy-of-the-command-line"><i class="fa fa-check"></i><b>3.1</b> The Anatomy of the Command Line</a></li>
 <li class="chapter" data-level="3.2" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#interacting-with-the-command-line"><i class="fa fa-check"></i><b>3.2</b> Interacting with the Command Line</a></li>
-<li class="chapter" data-level="3.3" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#common-command-line-commands"><i class="fa fa-check"></i><b>3.3</b> Common Command Line Commands</a></li>
+<li class="chapter" data-level="3.3" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#command-line-syntax"><i class="fa fa-check"></i><b>3.3</b> Command Line Syntax</a></li>
+<li class="chapter" data-level="3.4" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#stopping-a-command"><i class="fa fa-check"></i><b>3.4</b> Stopping a Command</a></li>
+<li class="chapter" data-level="3.5" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#common-command-line-commands"><i class="fa fa-check"></i><b>3.5</b> Common Command Line Commands</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="file-paths.html"><a href="file-paths.html"><i class="fa fa-check"></i><b>4</b> File Paths</a>
 <ul>
@@ -169,7 +171,7 @@ installing this program are on the previous page.</p>
 <p><img src="img/bash.png" /></p>
 <div id="the-anatomy-of-the-command-line" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> The Anatomy of the Command Line</h2>
-<p>While the command line can look intimidating to those raised on the GUI, using
+<p>While the command line can look intimidating to those raised on a GUI, using
 it is actually quite simple. Instead of pointing and clicking on things to make
 them happen, you type in your commands.</p>
 <p>Let’s return to the window that opens when you start Terminal or <a href="installing-a-command-line-interface.html#program">PROGRAM</a>.</p>
@@ -184,8 +186,8 @@ it’s helpful to have this information displayed as a reference point.</p>
 us where in the computer’s filesystem we are. We’ll discuss this later. For now,
 just keep in mind that you can look here to find your current location. In this
 case, <code>~</code> means you are in your <strong>home</strong> directory.</p>
-<p><img src="img/prompt_home_highlight.png" />
-After the location, we see the <code>$</code> character. It is an indicator that lets you
+<p><img src="img/prompt_home_highlight.png" /></p>
+<p>After the location, we see the <code>$</code> character. It is an indicator that lets you
 know the command line application is waiting for you to enter something. (Note
 that you do not need to type this character, it will appear automatically, but
 the examples below include it to emulate what you’ll see onscreen)</p>
@@ -194,7 +196,7 @@ see a solid or flashing box that appears after the prompt character. This is a
 <strong>cursor position indicator</strong> and it tells you where the current cursor is in
 the terminal. This is useful if you need to go back and correct and error.
 Generally speaking, you can’t click around with a mouse in this kind of interface.
-Instead, you’ll use your computer’s <code>left</code> and <code>right</code> arrows to move the cursor
+Instead, you’ll use your computer’s <code>Left</code> and <code>Right</code> arrows to move the cursor
 to the correct location and make any changes from there.</p>
 </div>
 <div id="interacting-with-the-command-line" class="section level2" number="3.2">
@@ -204,7 +206,7 @@ For example:</p>
 <pre><code>$ echo</code></pre>
 <p>…will print back to screen any text that you supply to the command. It literally
 echoes your text:</p>
-<pre><code>$ echo Hello world!
+<pre><code>$ echo &quot;Hello world!&quot;
 Hello world!
 $</code></pre>
 <p>To execute this, or any command, you simply hit the <code>Return</code>/<code>Enter</code> key on your
@@ -215,8 +217,37 @@ a new command line prompt.</p>
 things might look slightly different on your computer. However, the basic
 presentation and function as described above will be the same.</p>
 </div>
-<div id="common-command-line-commands" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> Common Command Line Commands</h2>
+<div id="command-line-syntax" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Command Line Syntax</h2>
+<p>The syntax of commands is relatively straightforward. Commands use a space to
+delimit their different components, and you can add optional <strong>flags</strong> to modify
+how a command runs (more on these flags below). When put together, these
+components look like so:</p>
+<pre><code>$ [command] [optional flags] [file, data, or other pointer on which to run the command]</code></pre>
+<p>There is one caveat to this: because commands use spaces to delimit their
+components, you can run into problems when running commands on files with spaces
+in their names. Your command line interface program will interpret that file’s
+spaces as separate components and an error will almost surely result. If you’re
+running a command on a file with a space in its name, you’ll need to <strong>escape</strong>
+that space with <code>\</code>.</p>
+<p>This will throw an error:</p>
+<pre><code>$ [command] file name.txt</code></pre>
+<p>This will not:</p>
+<pre><code>$ [command] file\ name.txt</code></pre>
+</div>
+<div id="stopping-a-command" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Stopping a Command</h2>
+<p>Did you do something that causes your computer to print a million lines on screen?
+Did you decide you don’t want that file copied to a new location, and it’s still
+in the midst of transferring? You can <strong>interrupt</strong> any command with <code>CTRL+C</code>.
+This will stop whatever current process is running in your interface.</p>
+<p>While you can stop a command, for the most part <em>it isn’t possible to undo a
+command</em>. Please take special care to know exactly what you’re running and what
+you’re running it on, especially when it comes to modifying or deleting things
+on your computer.</p>
+</div>
+<div id="common-command-line-commands" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Common Command Line Commands</h2>
 <p>During our hands-on workshop session we will practice using several commands.
 Be prepared to have this page ready as a reference during class to make things
 easier.</p>
@@ -274,6 +305,11 @@ easier.</p>
 <td align="left">rm</td>
 <td align="left">Remove/delete</td>
 <td align="left">Deletes files.</td>
+</tr>
+<tr class="even">
+<td align="left">man</td>
+<td align="left">Manual</td>
+<td align="left">Opens the manual page for another command.</td>
 </tr>
 </tbody>
 </table>

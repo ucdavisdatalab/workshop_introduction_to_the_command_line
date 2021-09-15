@@ -25,7 +25,7 @@
 <meta name="author" content="Carl Stahmer" />
 
 
-<meta name="date" content="2021-09-14" />
+<meta name="date" content="2021-09-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -93,7 +93,9 @@
 <ul>
 <li class="chapter" data-level="3.1" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#the-anatomy-of-the-command-line"><i class="fa fa-check"></i><b>3.1</b> The Anatomy of the Command Line</a></li>
 <li class="chapter" data-level="3.2" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#interacting-with-the-command-line"><i class="fa fa-check"></i><b>3.2</b> Interacting with the Command Line</a></li>
-<li class="chapter" data-level="3.3" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#common-command-line-commands"><i class="fa fa-check"></i><b>3.3</b> Common Command Line Commands</a></li>
+<li class="chapter" data-level="3.3" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#command-line-syntax"><i class="fa fa-check"></i><b>3.3</b> Command Line Syntax</a></li>
+<li class="chapter" data-level="3.4" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#stopping-a-command"><i class="fa fa-check"></i><b>3.4</b> Stopping a Command</a></li>
+<li class="chapter" data-level="3.5" data-path="working-with-the-command-line.html"><a href="working-with-the-command-line.html#common-command-line-commands"><i class="fa fa-check"></i><b>3.5</b> Common Command Line Commands</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="file-paths.html"><a href="file-paths.html"><i class="fa fa-check"></i><b>4</b> File Paths</a>
 <ul>
@@ -125,7 +127,7 @@
 <div id="file-paths" class="section level1" number="4">
 <h1><span class="header-section-number">4</span> File Paths</h1>
 <p>Due to the nature of its stripped down display, the command line interface can
-at times feel a bit static. But it offers much of the same interactivity that
+at times feel a bit static. But it offers much of the same functionality that
 modern GUIs offer, including the ability to move around your computer. With GUIs,
 we tend to navigate with our mouses; on the command line, we’ll use our keyboard.
 The live workshop session will cover this in depth, but for now it’s important to
@@ -148,12 +150,11 @@ command line interface.</p>
 <p>The top-most directory in your computer is called <code>root</code>. Unix systems denote it
 with the <code>/</code> character. It’s like the trunk of a tree: every directory in your
 computer branches off from it.</p>
-<p>A complication arises from the fact that directories can branch off from each
-other. Whenever you make a folder within another folder—or a <strong>subdirectory</strong>—
-you’ve created another branch in the tree, one which is at the same time a branch
-of <code>root</code> <em>and</em> a branch of whatever directory you’re currently in. For example,
-this is the structure of the practice exercise we’ll be using during our live
-session:</p>
+<p>A complication arises from the fact that directories can also branch off from
+each other. Whenever you make a folder within another folder—or a
+<strong>subdirectory</strong>—you’ve created another branch in the tree, one which is at the same time a branch of <code>root</code> <em>and</em> a branch of whatever directory you’re
+currently in. For example, this is the structure of the practice exercise we’ll
+be using during our live session:</p>
 <pre><code>.                               top of the directory
 ├── instructions.md             file in the top of the directory
 ├── instructions.pdf            &quot;&quot;
@@ -181,7 +182,7 @@ directory or file. No matter where you are in your computer, no matter how deep
 into a series of subdirectories you may be, if you used this absolute path with
 a navigation command, you could go straight to the location it indicates.</p>
 <p>By contrast, a <strong>relative path</strong> is context-specific. It depends on wherever you
-are in your computer. Unix uses some shorthand for this. <code>.</code> denotes the current
+are in your computer. Unix uses some shorthand for this: <code>.</code> denotes the current
 location in your computer, while <code>..</code> denotes the directory above that location.
 We can use this shorthand to avoid having to type out the entire path to a file
 or directory (this is useful if you’re far away from <code>root</code>). To continue with
@@ -197,9 +198,9 @@ the example from above, if you’re at <code>computer</code>:</p>
 <pre><code>../../../</code></pre>
 <p>This would take you three directories up from <code>computer</code>, which, as you can see
 above, is <code>located</code> (count the names between backslashes). That’s much shorter,
-though it comes with a trade-off: those <code>..</code> sequences are pretty hard to read
-without context, and it’s easy to get confused. We’ll discuss this more in our
-live session.</p>
+but there’s a downside: those <code>..</code> sequences are pretty hard to read without
+context, and it’s easy to get confused. Clearly, there can sometimes be a
+trade-off between using absolute and relative paths.</p>
 
 </div>
 </div>
