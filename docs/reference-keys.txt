@@ -10,7 +10,7 @@ program-installation-instructions
 working-with-the-command-line
 the-anatomy-of-the-command-line
 interacting-with-the-command-line
-command-line-syntax
+command-syntax
 stopping-a-command
 common-command-line-commands
 file-paths
