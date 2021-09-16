@@ -5,8 +5,8 @@ about-this-reader
 objectives-for-this-workshop
 prerequisites
 installing-a-command-line-interface
-program
-program-installation-instructions
+windows-subsystem-for-linux
+enabling-the-windows-subsystem-for-linux
 working-with-the-command-line
 the-anatomy-of-the-command-line
 interacting-with-the-command-line
