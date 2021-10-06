@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Introduction to the Unix Command Line</title>
-  <meta name="description" content="Introduction to the Unix Command Line" />
+  <title>3 Interacting with Our Computers: A Very Brief Primer | Introduction to the Unix Command Line</title>
+  <meta name="description" content="3 Interacting with Our Computers: A Very Brief Primer | Introduction to the Unix Command Line" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Introduction to the Unix Command Line" />
+  <meta property="og:title" content="3 Interacting with Our Computers: A Very Brief Primer | Introduction to the Unix Command Line" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://ucdavisdatalab.github.io/workshop_introduction_to_the_command_line/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="ucdavisdatalab/workshop_introduction_to_the_command_line" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introduction to the Unix Command Line" />
+  <meta name="twitter:title" content="3 Interacting with Our Computers: A Very Brief Primer | Introduction to the Unix Command Line" />
   
   
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="preliminaries.html"/>
+<link rel="prev" href="installing-a-command-line-interface.html"/>
+<link rel="next" href="command-line-basics.html"/>
 <script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -130,31 +130,62 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Introduction to the Unix Command Line</h1>
-<p class="author"><em>Tyler Shoemaker</em></p>
-<p class="author"><em>Carl Stahmer</em></p>
-<p class="date" style="margin-top: 1.5em;"><em>2021-10-06</em></p>
-</div>
-<div id="overview" class="section level1 unnumbered">
-<h1>Overview</h1>
-<p><img src="img/datalab-logo-full-color-rgb.png" /></p>
-<p>Learn and practice how to talk directly to your computer via the command line.
-The Unix shell is a powerful tool for using scientific software, working with
-large datasets, and controlling remote servers. It is primarily used to manage
-files and run programs, and it allows for automation of repetitive tasks. This
-workshop is a prerequisite for many of DataLab’s workshops, including
-Introduction to Version Control with Git, Reproducible Research for Teams with
-GitHub, and the Remote Computing series.</p>
+<div id="interacting-with-our-computers-a-very-brief-primer" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Interacting with Our Computers: A Very Brief Primer</h1>
+<center>
+<a href="https://en.wikipedia.org/wiki/Shell_(computing)#/media/File:X-Window-System.png"><img src="img/x_window_system.png" alt="Multiple user interfaces methods on a 1980s operating system" /></a>
+</center>
+<p><br></p>
+<p>Most people interact with their computer through a graphical user interface, or
+GUI, which allows them to use a mouse, keyboard, and graphical elements on screen
+(such as file menus, pictures of folders and files, etc.) as they do their work.
+We tend to conflate our operating systems and their GUIs because computer
+hardware and software manufacturers tightly pack these two things together as a
+convenience to users. But the operating system that makes your computer work
+(Windows 10, Mac Big Sur, etc.) and the GUI that you interact with are, in fact,
+completely different and separable software packages. It is possible to use
+different methods/software, or <strong>shells</strong>, to interact with your computer other
+than the stock GUI that launches automatically when you turn it on.</p>
+<p>On such method is the “command line” interface (CLI). The command line offers a
+text-only, non-graphical means of interacting with your computer, acting somewhat
+like a typewriter (rather than a <em>window</em> or <em>desktop</em>, as the prevailing
+metaphors for GUIs go). In the early days of computing, all user interaction with
+your computer happened at the command line. But during the 1980s, computer
+manufacturers—with Apple at the lead—made a big push to convert their machines
+to the windowing systems we know today. A CLI, they felt, was too difficult for
+to understand and this, in turn, would hamper computer sales.</p>
+<p>Nowadays there are few viable (and at present, almost no commercially available)
+shells that can compete with the predominant systems of Macs and PCs. While this
+is less the case for Linux machines, people are by and large locked into the GUIs
+that come pre-installed on their machines. CLIs are, however, available, and
+some are even installed on popular computer hardware.</p>
+<div id="to-the-command-line-a-mentality-shift" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> To the Command Line: A Mentality Shift</h2>
+<p>The following sections will discuss how to open and use CLIs. Doing so is
+necessarily action-oriented: the workshop covers a host of different commands
+that will help you in your day-to-day work on a computer. But knowing the
+pragmatics of using a CLI is only one part of a broader change in the mentality
+we bring to interacting with our computers beyond the GUI. When we work on the
+command line, we find ourselves doing things computers typically <em>do for us</em>.
+Because of this, we need to know more about how our computers work than we
+would if we only used a GUI.</p>
+<p>This workshop only covers a small part of that knowledge, but the commands and
+conventions we’ll discuss tend to generalize to other activities like writing
+code or tracking files with version control. Learning this material, then, is in
+part about preparing yourself to learn more advanced computing skills later on.
+As such, this workshop – and with it, our live session – will cover broader
+concepts and conventions in computing as much as it will show you how to use
+the command line.</p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="preliminaries.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="installing-a-command-line-interface.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="command-line-basics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -176,7 +207,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/ucdavisdatalab/workshop_introduction_to_the_command_line/edit/main/index.Rmd",
+"link": "https://github.com/ucdavisdatalab/workshop_introduction_to_the_command_line/edit/main/03_interacting-with-our-computers.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -184,7 +215,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/ucdavisdatalab/workshop_introduction_to_the_command_line/blob/main/index.Rmd",
+"link": "https://github.com/ucdavisdatalab/workshop_introduction_to_the_command_line/blob/main/03_interacting-with-our-computers.Rmd",
 "text": null
 },
 "download": null,
