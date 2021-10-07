@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="navigation.html"/>
-
+<link rel="next" href="end.html"/>
 <script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -114,6 +114,11 @@
 <li class="chapter" data-level="6.2" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#inspecting-files"><i class="fa fa-check"></i><b>6.2</b> Inspecting Files</a></li>
 <li class="chapter" data-level="6.3" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#accessing-command-line-text-editors"><i class="fa fa-check"></i><b>6.3</b> Accessing Command Line Text Editors</a></li>
 <li class="chapter" data-level="6.4" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#basic-vim-commands"><i class="fa fa-check"></i><b>6.4</b> Basic Vim Commands</a></li>
+<li class="chapter" data-level="6.5" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#cleaning-up"><i class="fa fa-check"></i><b>6.5</b> Cleaning Up</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="end.html"><a href="end.html"><i class="fa fa-check"></i><b>7</b> End</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="end.html"><a href="end.html#resources-referenced"><i class="fa fa-check"></i><b>7.1</b> Resources Referenced</a></li>
 </ul></li>
 </ul>
 
@@ -168,9 +173,11 @@ that doesn’t expect this kind of format. For example, if you open this image:<
 <p>…with a text editor, you’ll see something like this:</p>
 <pre><code>&lt;89&gt;PNG^M
 ^Z
-^@^@^@^MIHDR^@^@^F&lt;86&gt;^@^@^C&lt;9e&gt;^H^F^@^@^@.¡¢¹^@^@^LliCCPICC                                                            Profile^@^@H&lt;89&gt;&lt;95&gt;W^GXSÉ^V&lt;9e&gt;[RIh&lt;81&gt;P¤&lt;84&gt;Þ^DéUJ^H-&lt;82&gt;&lt;80&gt;TÁFH^B    
+^@^@^@^MIHDR^@^@^F&lt;86&gt;^@^@^C&lt;9e&gt;^H^F^@^@^@.¡¢¹^@^@^LliCCPICC
+Profile^@^@H&lt;89&gt;&lt;95&gt;W^GXSÉ^V&lt;9e&gt;[RIh&lt;81&gt;P¤&lt;84&gt;Þ^DéUJ^H-&lt;82&gt;&lt;80&gt;TÁFH^B    
 %Æ&lt;84&gt; bg]Tpí&quot;&lt;8a&gt;^U]^UQt-&lt;80&gt;,*b/             
-&lt;8b&gt;bï&lt;8b&gt;^E&lt;95&gt;&lt;95&gt;u± (*oB^Bºî+ß;ß7wþ{æÌ^?Ê&lt;9d&gt;¹÷^N^@Z½&lt;©4^OÕ^F _R K&lt;88&gt;^Le&lt;8d&gt;MKg&lt;91&gt;:^@^Y0^@^S&lt;98&gt;^C?^^_.            eÇÇÇ^@(&lt;83&gt;ýßåÝ^M&lt;80&gt;(û«ÎJ®^?&lt;8e&gt;ÿWÑ^U^Hå|^@&lt;90&gt;ñ^Pg
+&lt;8b&gt;bï&lt;8b&gt;^E&lt;95&gt;&lt;95&gt;u± (*oB^Bºî+ß;ß7wþ{æÌ^?Ê&lt;9d&gt;¹÷^N^@Z½&lt;©4^OÕ^F _R K&lt;88&gt;^Le&lt;8d&gt;MKg&lt;91&gt;:^@^Y0^@^S&lt;98&gt;^C?^^_.
+eÇÇÇ^@(&lt;83&gt;ýßåÝ^M&lt;80&gt;(û«ÎJ®^?&lt;8e&gt;ÿWÑ^U^Hå|^@&lt;90&gt;ñ^Pg
 [...]</code></pre>
 <p>A complete mess! We’re seeing this because text editors aren’t able to interpret
 data streams from binary files. They’ll do their best to try and parse the stream,
@@ -251,7 +258,7 @@ and, somewhat strangely, it doesn’t let you insert text directly in the docume
 more likely to edit text on the command line than we are to write it).</p>
 <p>To insert text in your document, switch to Insert mode by pressing <code>i</code>. You can
 check whether you’re in Insert mode by looking at the bottom left hand portion
-of the window, which should read <code>-- INSERT --</code>.</p>
+of the window. You should see an <code>-- INSERT --</code> string.</p>
 <p><img src="img/hello_world_vim.png" /></p>
 <p>Once you are done inserting text, pressing <code>ESC</code> (the Escape key) will bring you
 back to Normal mode. From here, you can save and quit your file, though these
@@ -276,6 +283,9 @@ text editor can be found <a href="https://vim.fandom.com/wiki/Vim_Tips_Wiki">her
 </div>
 <div id="basic-vim-commands" class="section level2" number="6.4">
 <h2><span class="header-section-number">6.4</span> Basic Vim Commands</h2>
+<p>As before with the CLI commands, we’ll only cover a small portion of Vim commands
+in the workshop. The table below summarizes them, but a more complete list may be
+found on this <a href="https://vim.rtorr.com/">cheat sheet</a>.</p>
 <table>
 <caption><span id="tab:unnamed-chunk-1">Table 4.1: </span></caption>
 <thead>
@@ -307,7 +317,33 @@ text editor can be found <a href="https://vim.fandom.com/wiki/Vim_Tips_Wiki">her
 </tr>
 </tbody>
 </table>
-<p>For a more complete list of Vim commands, see this <a href="https://vim.rtorr.com/">Cheat Sheet</a>.</p>
+</div>
+<div id="cleaning-up" class="section level2" number="6.5">
+<h2><span class="header-section-number">6.5</span> Cleaning Up</h2>
+<p>Assuming we did save our text file, let’s clean up our directory another way.
+The last command we’ll discuss is <code>rm</code> (“remove”). You can use it to delete files
+and from your computer:</p>
+<pre><code>$ ls
+data.csv  hello.txt  moby_dick.txt  project_folder
+$ rm hello.txt
+$ ls
+data.csv  moby_dick.txt  project_folder</code></pre>
+<p>Using the <code>-r</code> flag (which stands for “recursive”), you can also delete folders:</p>
+<pre><code>$ rm -r project_folder
+$ ls
+data.csv  moby_dick.txt</code></pre>
+<p>Please note that this command, like many such commands on the command line, has
+no undo. It’s also a particularly mute command, giving little in the way of an
+indication about what it’s doing. If you have multiple files to delete, or if
+you’re worried that it might delete something you don’t want to remove, you may
+consider putting <code>rm</code> in interactive mode with <code>-i</code>. This will prompt you with a
+yes/no query for every file the command may remove:</p>
+<pre><code>$ ls 
+data.csv  moby_dick.txt
+$ rm -i moby_dick.txt
+remove moby_dick.txt? &lt;- enter &quot;no&quot; and press Return/Enter
+$ ls
+data.csv  moby_dick.txt</code></pre>
 
 </div>
 </div>
@@ -316,8 +352,8 @@ text editor can be found <a href="https://vim.fandom.com/wiki/Vim_Tips_Wiki">her
           </div>
         </div>
       </div>
-<a href="navigation.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="navigation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="end.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

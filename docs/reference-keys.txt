@@ -25,3 +25,6 @@ plain-text-vs.-binary-files
 inspecting-files
 accessing-command-line-text-editors
 basic-vim-commands
+cleaning-up
+end
+resources-referenced
