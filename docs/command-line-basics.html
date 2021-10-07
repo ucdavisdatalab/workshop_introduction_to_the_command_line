@@ -111,8 +111,9 @@
 <li class="chapter" data-level="6" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html"><i class="fa fa-check"></i><b>6</b> Text Editing with the Command Line</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#plain-text-vs.-binary-files"><i class="fa fa-check"></i><b>6.1</b> Plain Text vs. Binary Files</a></li>
-<li class="chapter" data-level="6.2" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#accessing-command-line-text-editors"><i class="fa fa-check"></i><b>6.2</b> Accessing Command Line Text Editors</a></li>
-<li class="chapter" data-level="6.3" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#basic-vim-commands"><i class="fa fa-check"></i><b>6.3</b> Basic Vim Commands</a></li>
+<li class="chapter" data-level="6.2" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#inspecting-files"><i class="fa fa-check"></i><b>6.2</b> Inspecting Files</a></li>
+<li class="chapter" data-level="6.3" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#accessing-command-line-text-editors"><i class="fa fa-check"></i><b>6.3</b> Accessing Command Line Text Editors</a></li>
+<li class="chapter" data-level="6.4" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#basic-vim-commands"><i class="fa fa-check"></i><b>6.4</b> Basic Vim Commands</a></li>
 </ul></li>
 </ul>
 
@@ -201,8 +202,7 @@ the prompt. For example:</p>
 <p>…will print back to screen any text that you supply to the command. It literally
 echoes your text:</p>
 <pre><code>$ echo &quot;Hello world!&quot;
-Hello world!
-$</code></pre>
+Hello world!</code></pre>
 <p>To execute this, or any command, you simply hit the <code>Return</code>/<code>Enter</code> key on your
 keyboard. You’ll see that when you execute a command, the system will perform the
 indicated operation, print any output from that operation to screen, and deliver
@@ -210,8 +210,7 @@ a new command line prompt.</p>
 <p>If you want to see what files and folders are in your home directory, you can
 use <code>ls</code> (“list”):</p>
 <pre><code>$ ls
-backups  data.csv  jupyter_notebook.ipynb  project_folder
-$</code></pre>
+backups  data.csv  jupyter_notebook.ipynb  project_folder</code></pre>
 <p>Want some more information about those files and folders? You can modify the base
 functionality of the <code>ls</code> command – and in fact you can do this for many such
 commands – with a <strong>flag</strong>. We do this by adding a dash (<code>-</code>) and then a letter,

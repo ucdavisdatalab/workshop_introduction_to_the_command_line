@@ -111,8 +111,9 @@
 <li class="chapter" data-level="6" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html"><i class="fa fa-check"></i><b>6</b> Text Editing with the Command Line</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#plain-text-vs.-binary-files"><i class="fa fa-check"></i><b>6.1</b> Plain Text vs. Binary Files</a></li>
-<li class="chapter" data-level="6.2" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#accessing-command-line-text-editors"><i class="fa fa-check"></i><b>6.2</b> Accessing Command Line Text Editors</a></li>
-<li class="chapter" data-level="6.3" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#basic-vim-commands"><i class="fa fa-check"></i><b>6.3</b> Basic Vim Commands</a></li>
+<li class="chapter" data-level="6.2" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#inspecting-files"><i class="fa fa-check"></i><b>6.2</b> Inspecting Files</a></li>
+<li class="chapter" data-level="6.3" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#accessing-command-line-text-editors"><i class="fa fa-check"></i><b>6.3</b> Accessing Command Line Text Editors</a></li>
+<li class="chapter" data-level="6.4" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#basic-vim-commands"><i class="fa fa-check"></i><b>6.4</b> Basic Vim Commands</a></li>
 </ul></li>
 </ul>
 
@@ -167,41 +168,79 @@ that doesn’t expect this kind of format. For example, if you open this image:<
 <p>…with a text editor, you’ll see something like this:</p>
 <pre><code>&lt;89&gt;PNG^M
 ^Z
-^@^@^@^MIHDR^@^@^F&lt;86&gt;^@^@^C&lt;9e&gt;^H^F^@^@^@.¡¢¹^@^@^LliCCPICC                                                            Profile^@^@H&lt;89&gt;&lt;95&gt;W^GXSÉ^V&lt;9e&gt;[RIh&lt;81&gt;P¤&lt;84&gt;Þ^DéUJ^H-&lt;82&gt;&lt;80&gt;TÁFH^B    %Æ&lt;84&gt; bg]Tpí&quot;&lt;8a&gt;^U]^UQt-&lt;80&gt;,*b/             &lt;8b&gt;bï&lt;8b&gt;^E&lt;95&gt;&lt;95&gt;u± (*oB^Bºî+ß;ß7wþ{æÌ^?Ê&lt;9d&gt;¹÷^N^@Z½&lt;©4^OÕ^F _R K&lt;88&gt;^Le&lt;8d&gt;MKg&lt;91&gt;:^@^Y0^@^S&lt;98&gt;^C?^^_.            eÇÇÇ^@(&lt;83&gt;ýßåÝ^M&lt;80&gt;(û«ÎJ®^?&lt;8e&gt;ÿWÑ^U^Hå|^@&lt;90&gt;ñ^Pg
+^@^@^@^MIHDR^@^@^F&lt;86&gt;^@^@^C&lt;9e&gt;^H^F^@^@^@.¡¢¹^@^@^LliCCPICC                                                            Profile^@^@H&lt;89&gt;&lt;95&gt;W^GXSÉ^V&lt;9e&gt;[RIh&lt;81&gt;P¤&lt;84&gt;Þ^DéUJ^H-&lt;82&gt;&lt;80&gt;TÁFH^B    
+%Æ&lt;84&gt; bg]Tpí&quot;&lt;8a&gt;^U]^UQt-&lt;80&gt;,*b/             
+&lt;8b&gt;bï&lt;8b&gt;^E&lt;95&gt;&lt;95&gt;u± (*oB^Bºî+ß;ß7wþ{æÌ^?Ê&lt;9d&gt;¹÷^N^@Z½&lt;©4^OÕ^F _R K&lt;88&gt;^Le&lt;8d&gt;MKg&lt;91&gt;:^@^Y0^@^S&lt;98&gt;^C?^^_.            eÇÇÇ^@(&lt;83&gt;ýßåÝ^M&lt;80&gt;(û«ÎJ®^?&lt;8e&gt;ÿWÑ^U^Hå|^@&lt;90&gt;ñ^Pg
 [...]</code></pre>
 <p>A complete mess! We’re seeing this because text editors aren’t able to interpret
-data streams from binary files. There would be no way to edit this kind of file
-in a text editor – you’d simply have no idea where to start. And more, making
-any such changes would likely cause problems in the file data itself, since it
-contains custom encodings that don’t correspond to plain text characters. If we
-deleted the output above from this image, resaved it, and reopened it in an
-image viewer…</p>
+data streams from binary files. They’ll do their best to try and parse the stream,
+but that process won’t ultimately work. There is thus no way to edit this kind
+of file in a text editor – you’d simply have no idea where to start. And more,
+making any such changes would likely cause problems with the file data itself,
+since it contains custom encodings that don’t correspond to plain text
+characters. If we deleted a snippet of “text” from the output above, resaved it,
+and reopened it in an image viewer…</p>
 <center>
 <img src="img/broken_image.png" />
 </center>
 <p><br></p>
 <p>…we’ll see that it’s been corrupted.</p>
+</div>
+<div id="inspecting-files" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Inspecting Files</h2>
 <p>If, while working on the command line, you need to get a sense of what kind of
 data is stored in a file, the <code>file</code> function is useful. Here’s an image:</p>
 <pre><code>$ file broken_image.png
 broken_image.png: PNG image data, 520 x 470, 8-bit/color RGBA, non-interlaced</code></pre>
-<p>That won’t work for us. On the other hand:</p>
+<p>Based on this information, we can see that that won’t work for us. On the other
+hand, this information:</p>
 <pre><code>$ file README.md
 01_overview.Rmd: ASCII text</code></pre>
-<p>…will. The <code>ASCII text</code> message lets us know we can open it with a text editor.</p>
-<p>The same goes for a <code>.csv</code>:</p>
+<p>…shows us that <code>README.md</code> will. The <code>ASCII text</code> message lets us know we can
+open it with a text editor. The same goes for a <code>.csv</code>:</p>
 <pre><code>$ file data.csv
 data.csv: CSV text</code></pre>
 <p>We would be able to open this as well.</p>
+<p>There are two other commands that are useful for inspecting files on the
+command line. <code>cat</code> (“concatenate”) will print the entirety of a file’s contents
+on screen:</p>
+<pre><code>$ cat file.txt
+I&#39;m written in plain text!</code></pre>
+<pre><code>$ cat prompt.png
+?PNG
+
+IHDR?.???
+         liCCPICC ProfileH??WXS??[RIh?P????U-??T?FH %Ƅ?bg]Tp?&quot;?]Qt-?,*b/?b???u??(*oB??+?;?7w?{??ʝ??Z?&lt;?4? _R K?
+[...]</code></pre>
+<p><code>head</code> will print the first <code>N</code> lines on screen (its default is 10 lines):</p>
+<pre><code>$ head moby_dick.txt
+CHAPTER 1. Loomings.
+
+Call me Ishmael. Some years ago—never mind how long precisely—having
+little or no money in my purse, and nothing particular to interest me
+on shore, I thought I would sail about a little and see the watery part
+of the world. It is a way I have of driving off the spleen and
+regulating the circulation. Whenever I find myself growing grim about
+the mouth; whenever it is a damp, drizzly November in my soul; whenever
+I find myself involuntarily pausing before coffin warehouses, and
+bringing up the rear of every funeral I meet; and especially whenever</code></pre>
+<p>Both commands offer you a method to get an easy glimpse at the contents of files
+on your computer.</p>
+<p><strong>Note:</strong> common word processing software like Microsoft Word poses an interesting
+complication to all of the above. Word docs are actually comprised of a number of
+different, associated files under the hood. It’s technically possible to alter
+the text of such files, but finding the location where you’d like to make your
+changes can be a big pain. Welcome to the world of proprietary software!</p>
 </div>
-<div id="accessing-command-line-text-editors" class="section level2" number="6.2">
-<h2><span class="header-section-number">6.2</span> Accessing Command Line Text Editors</h2>
-<p>To open such files on the command line, we’ll use a text editor called <strong>Vim</strong>.
-Macs and WSL/Ubuntu both ship with this application, so no need to download it
-(other command editors include Emacs and Nano). If you’d like to open a file with
-vim, type <code>vi</code> in a command line window, followed by the filename. You can also
-create a new file this way, simply by typing the name you’d like to use for that
-file after <code>vi</code>.</p>
+<div id="accessing-command-line-text-editors" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Accessing Command Line Text Editors</h2>
+<p>Now that we know what we can and can’t edit on the command line, we can start
+generating some text. To do so, we’ll use a text editor called <strong>Vim</strong>. Macs and
+WSL/Ubuntu both ship with this application, so there’s no need to download it
+(other command line editors include Emacs and Nano). If you’d like to open a file
+with vim, type <code>vi</code> in a command line window, followed by the filename. You can
+also create a new file this way, simply by typing the name you’d like to use for
+that file after <code>vi</code>.</p>
 <p><img src="img/new_vim_file.png" /></p>
 <p>Vim works a bit differently than other text editors and word processors. It has
 a number of ‘modes,’ which provide different forms of interaction with a file’s
@@ -235,8 +274,8 @@ commands like this in Vim, and the program can be customized far beyond what
 you’ll typically need for basic command line usage. More information about this
 text editor can be found <a href="https://vim.fandom.com/wiki/Vim_Tips_Wiki">here</a>.</p>
 </div>
-<div id="basic-vim-commands" class="section level2" number="6.3">
-<h2><span class="header-section-number">6.3</span> Basic Vim Commands</h2>
+<div id="basic-vim-commands" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> Basic Vim Commands</h2>
 <table>
 <caption><span id="tab:unnamed-chunk-1">Table 4.1: </span></caption>
 <thead>

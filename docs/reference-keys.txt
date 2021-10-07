@@ -22,5 +22,6 @@ absolute-vs.-relative-paths
 moving-data-around
 text-editing-with-the-command-line
 plain-text-vs.-binary-files
+inspecting-files
 accessing-command-line-text-editors
 basic-vim-commands
