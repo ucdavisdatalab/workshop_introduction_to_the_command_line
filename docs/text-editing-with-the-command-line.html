@@ -158,7 +158,7 @@ a <code>.txt</code> file, though code files (<code>.py</code>, <code>.R</code>) 
 fall under the heading of plain text.</p>
 <p>Binary data, on the other hand, is not human-readable. It is not stored in a way
 that cleanly translates to various alphanumeric characters; rather, it stores
-data as sequences of 0/1 bits without reference to characters. Often, such
+data as sequences of 0/1 bits without reference to characters. Often such
 representations are used for data storage. Common file types for binary data
 include ones for images (<code>.jpg</code>, <code>.png</code>), for sound (<code>.mp3</code>), and for various
 executables (<code>.exe</code>).</p>
@@ -209,8 +209,8 @@ open it with a text editor. The same goes for a <code>.csv</code>:</p>
 data.csv: CSV text</code></pre>
 <p>We would be able to open this as well.</p>
 <p>There are two other commands that are useful for inspecting files on the
-command line. <code>cat</code> (“concatenate”) will print the entirety of a file’s contents
-on screen:</p>
+command line. <code>cat</code> (“concatenate”) will print (or attempt to print) in plain text
+the entirety of a file’s contents on screen:</p>
 <pre><code>$ cat file.txt
 I&#39;m written in plain text!</code></pre>
 <pre><code>$ cat prompt.png
@@ -219,7 +219,8 @@ I&#39;m written in plain text!</code></pre>
 IHDR?.???
          liCCPICC ProfileH??WXS??[RIh?P????U-??T?FH %Ƅ?bg]Tp?&quot;?]Qt-?,*b/?b???u??(*oB??+?;?7w?{??ʝ??Z?&lt;?4? _R K?
 [...]</code></pre>
-<p><code>head</code> will print the first <code>N</code> lines on screen (its default is 10 lines):</p>
+<p>On the other hand, <code>head</code> will print the first <code>N</code> lines on screen (its default
+is 10 lines):</p>
 <pre><code>$ head moby_dick.txt
 CHAPTER 1. Loomings.
 
@@ -237,7 +238,8 @@ on your computer.</p>
 complication to all of the above. Word docs are actually comprised of a number of
 different, associated files under the hood. It’s technically possible to alter
 the text of such files, but finding the location where you’d like to make your
-changes can be a big pain. Welcome to the world of proprietary software!</p>
+change can be a big pain, so it’s often just easier to use an application that
+has been made to interact with them. Welcome to the world of proprietary software!</p>
 </div>
 <div id="accessing-command-line-text-editors" class="section level2" number="6.3">
 <h2><span class="header-section-number">6.3</span> Accessing Command Line Text Editors</h2>
