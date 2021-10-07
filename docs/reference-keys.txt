@@ -21,5 +21,6 @@ path-hierarchies
 absolute-vs.-relative-paths
 moving-data-around
 text-editing-with-the-command-line
+plain-text-vs.-binary-files
 accessing-command-line-text-editors
 basic-vim-commands

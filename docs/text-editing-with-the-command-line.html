@@ -110,8 +110,9 @@
 </ul></li>
 <li class="chapter" data-level="6" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html"><i class="fa fa-check"></i><b>6</b> Text Editing with the Command Line</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#accessing-command-line-text-editors"><i class="fa fa-check"></i><b>6.1</b> Accessing Command Line Text Editors</a></li>
-<li class="chapter" data-level="6.2" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#basic-vim-commands"><i class="fa fa-check"></i><b>6.2</b> Basic Vim Commands</a></li>
+<li class="chapter" data-level="6.1" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#plain-text-vs.-binary-files"><i class="fa fa-check"></i><b>6.1</b> Plain Text vs. Binary Files</a></li>
+<li class="chapter" data-level="6.2" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#accessing-command-line-text-editors"><i class="fa fa-check"></i><b>6.2</b> Accessing Command Line Text Editors</a></li>
+<li class="chapter" data-level="6.3" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#basic-vim-commands"><i class="fa fa-check"></i><b>6.3</b> Basic Vim Commands</a></li>
 </ul></li>
 </ul>
 
@@ -135,16 +136,60 @@
 <p>Beyond the basic commands and navigation functions we’ve discussed so far, the
 command line also features the ability to edit files directly, usually by means
 of a text editor. These editors are similar in nature to Microsoft Word or Mac
-Pages but they’re much more stripped down and tend to work best with plain text
-files (<code>.txt</code> files, code files like <code>.R</code> or <code>.py</code>, etc.). These editors are only
-accessible from the command line and it is important to know how to use them so
-that you can open, read, and write directly in the command line window.</p>
-<div id="accessing-command-line-text-editors" class="section level2" number="6.1">
-<h2><span class="header-section-number">6.1</span> Accessing Command Line Text Editors</h2>
-<p>Macs and WSL/Ubuntu both ship with a text editor called <strong>Vim</strong> (other common
-editors include Emacs and Nano). To open a file with vim, type <code>vi</code> in a
-command line window, followed by the file name. If you want to create a new
-file, simply type the file name you’d like to use for that file after <code>vi</code>.</p>
+Pages but they’re much more stripped down and tend to work best with <strong>plain text</strong>
+files. These editors are only accessible from the command line and it is
+important to know how to use them so that you can open, read, and write directly
+on the command line.</p>
+<div id="plain-text-vs.-binary-files" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Plain Text vs. Binary Files</h2>
+<p>Before continuing, it’s important to distinguish plain text from <strong>binary</strong> data.
+This distinction bears directly on what we can and cannot edit using a text
+editor. In computing, plain text has multiple fuzzy, interlocking meanings, but
+generally it means some kind of data that is <em>human readable</em>, which is to say
+it is comprised of a collection of text characters (ASCII, usually). A common
+way to store this data is with a <code>.txt</code> file, though code files (<code>.py</code>, <code>.R</code>)
+and tabular data (<code>.csv</code>) also fall under the plain text heading.</p>
+<p>Binary data, on the other hand, is comprised of a series of bytes and is not
+human-readable. It is often used for data storage. Common file types include ones
+for images (<code>.jpg</code>, <code>.png</code>), for sound (<code>.mp3</code>), and various executables (<code>.exe</code>).</p>
+<p>If you try to open a binary file, for example this image:</p>
+<p><img src="img/prompt.png" /></p>
+<p>…with a text editor, you’ll see something like this:</p>
+<pre><code>&lt;89&gt;PNG^M
+^Z
+^@^@^@^MIHDR^@^@^F&lt;86&gt;^@^@^C&lt;9e&gt;^H^F^@^@^@.¡¢¹^@^@^LliCCPICC                                                            Profile^@^@H&lt;89&gt;&lt;95&gt;W^GXSÉ^V&lt;9e&gt;[RIh&lt;81&gt;P¤&lt;84&gt;Þ^DéUJ^H-&lt;82&gt;&lt;80&gt;TÁFH^B    %Æ&lt;84&gt; bg]Tpí&quot;&lt;8a&gt;^U]^UQt-&lt;80&gt;,*b/             &lt;8b&gt;bï&lt;8b&gt;^E&lt;95&gt;&lt;95&gt;u± (*oB^Bºî+ß;ß7wþ{æÌ^?Ê&lt;9d&gt;¹÷^N^@Z½&lt;©4^OÕ^F _R K&lt;88&gt;^Le&lt;8d&gt;MKg&lt;91&gt;:^@^Y0^@^S&lt;98&gt;^C?^^_.            eÇÇÇ^@(&lt;83&gt;ýßåÝ^M&lt;80&gt;(û«ÎJ®^?&lt;8e&gt;ÿWÑ^U^Hå|^@&lt;90&gt;ñ^Pg
+[...]</code></pre>
+<p>A complete mess! We’re seeing this because text editors aren’t able to interpret
+data streams from binary files. There would be no way to edit this kind of file
+in a text editor – you’d simply have no idea where to start. And more, making
+any such changes would likely cause problems in the file data itself. If we
+deleted the output above from this image, resaved it, and reopened it in an
+image viewer…</p>
+<center>
+<img src="img/broken_image.png" />
+</center>
+<p>…we’ll see that it’s been corrupted.</p>
+<p>If you need to get a sense of what kind of data is stored in a file, the <code>file</code>
+function is useful. Here’s an image:</p>
+<pre><code>$ file broken_image.png
+broken_image.png: PNG image data, 520 x 470, 8-bit/color RGBA, non-interlaced</code></pre>
+<p>That won’t work for us. On the other hand, here’s a plain text:</p>
+<pre><code>$ file README.md
+01_overview.Rmd: ASCII text</code></pre>
+<p>The <code>ASCII text</code> readout lets us know we can open it with a text editor.</p>
+<p>The same goes for a <code>.csv</code>:</p>
+<pre><code>$ file data.csv
+data.csv: CSV text</code></pre>
+<p>We would be able to open this as well.</p>
+</div>
+<div id="accessing-command-line-text-editors" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Accessing Command Line Text Editors</h2>
+<p>To open such files on the command line, we’ll use a text editor called <strong>Vim</strong>.
+Macs and WSL/Ubuntu both ship with this application, so no need to download it
+(other command editors include Emacs and Nano). If you’d like to open a file with
+vim, type <code>vi</code> in a command line window, followed by the filename. You can also
+create a new file this way, simply by typing the name you’d like to use for that
+file after <code>vi</code>.</p>
 <p><img src="img/new_vim_file.png" /></p>
 <p>Vim works a bit differently than other text editors and word processors. It has
 a number of ‘modes,’ which provide different forms of interaction with a file’s
@@ -178,8 +223,8 @@ commands like this in Vim, and the program can be customized far beyond what
 you’ll typically need for basic command line usage. More information about this
 text editor can be found <a href="https://vim.fandom.com/wiki/Vim_Tips_Wiki">here</a>.</p>
 </div>
-<div id="basic-vim-commands" class="section level2" number="6.2">
-<h2><span class="header-section-number">6.2</span> Basic Vim Commands</h2>
+<div id="basic-vim-commands" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Basic Vim Commands</h2>
 <table>
 <caption><span id="tab:unnamed-chunk-1">Table 4.1: </span></caption>
 <thead>
