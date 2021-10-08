@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6 Text Editing with the Command Line | Introduction to the Unix Command Line</title>
-  <meta name="description" content="6 Text Editing with the Command Line | Introduction to the Unix Command Line" />
+  <title>6 Editing Files | Introduction to the Unix Command Line</title>
+  <meta name="description" content="6 Editing Files | Introduction to the Unix Command Line" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6 Text Editing with the Command Line | Introduction to the Unix Command Line" />
+  <meta property="og:title" content="6 Editing Files | Introduction to the Unix Command Line" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://ucdavisdatalab.github.io/workshop_introduction_to_the_command_line/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="ucdavisdatalab/workshop_introduction_to_the_command_line" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 Text Editing with the Command Line | Introduction to the Unix Command Line" />
+  <meta name="twitter:title" content="6 Editing Files | Introduction to the Unix Command Line" />
   
   
   
@@ -108,13 +108,13 @@
 <li class="chapter" data-level="5.3" data-path="navigation.html"><a href="navigation.html#absolute-vs.-relative-paths"><i class="fa fa-check"></i><b>5.3</b> Absolute vs. Relative Paths</a></li>
 <li class="chapter" data-level="5.4" data-path="navigation.html"><a href="navigation.html#moving-data-around"><i class="fa fa-check"></i><b>5.4</b> Moving Data Around</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html"><i class="fa fa-check"></i><b>6</b> Text Editing with the Command Line</a>
+<li class="chapter" data-level="6" data-path="editing-files.html"><a href="editing-files.html"><i class="fa fa-check"></i><b>6</b> Editing Files</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#plain-text-vs.-binary-files"><i class="fa fa-check"></i><b>6.1</b> Plain Text vs. Binary Files</a></li>
-<li class="chapter" data-level="6.2" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#inspecting-files"><i class="fa fa-check"></i><b>6.2</b> Inspecting Files</a></li>
-<li class="chapter" data-level="6.3" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#accessing-command-line-text-editors"><i class="fa fa-check"></i><b>6.3</b> Accessing Command Line Text Editors</a></li>
-<li class="chapter" data-level="6.4" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#basic-vim-commands"><i class="fa fa-check"></i><b>6.4</b> Basic Vim Commands</a></li>
-<li class="chapter" data-level="6.5" data-path="text-editing-with-the-command-line.html"><a href="text-editing-with-the-command-line.html#cleaning-up"><i class="fa fa-check"></i><b>6.5</b> Cleaning Up</a></li>
+<li class="chapter" data-level="6.1" data-path="editing-files.html"><a href="editing-files.html#plain-text-vs.-binary-files"><i class="fa fa-check"></i><b>6.1</b> Plain Text vs. Binary Files</a></li>
+<li class="chapter" data-level="6.2" data-path="editing-files.html"><a href="editing-files.html#inspecting-files"><i class="fa fa-check"></i><b>6.2</b> Inspecting Files</a></li>
+<li class="chapter" data-level="6.3" data-path="editing-files.html"><a href="editing-files.html#accessing-command-line-text-editors"><i class="fa fa-check"></i><b>6.3</b> Accessing Command Line Text Editors</a></li>
+<li class="chapter" data-level="6.4" data-path="editing-files.html"><a href="editing-files.html#basic-vim-commands"><i class="fa fa-check"></i><b>6.4</b> Basic Vim Commands</a></li>
+<li class="chapter" data-level="6.5" data-path="editing-files.html"><a href="editing-files.html#cleaning-up"><i class="fa fa-check"></i><b>6.5</b> Cleaning Up</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="end.html"><a href="end.html"><i class="fa fa-check"></i><b>7</b> End</a>
 <ul>
@@ -137,8 +137,8 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="text-editing-with-the-command-line" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> Text Editing with the Command Line</h1>
+<div id="editing-files" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Editing Files</h1>
 <p>Beyond the basic commands and navigation functions we’ve discussed so far, the
 command line also features the ability to edit files directly, usually by means
 of a text editor. These editors are similar in nature to Microsoft Word or Mac
@@ -148,14 +148,14 @@ important to know how to use them so that you can open, read, and write directly
 on the command line.</p>
 <div id="plain-text-vs.-binary-files" class="section level2" number="6.1">
 <h2><span class="header-section-number">6.1</span> Plain Text vs. Binary Files</h2>
-<p>Before continuing, we’ll briefly distinguish plain text from <strong>binary</strong> data.
-This distinction bears directly on what we can and cannot edit using a text
-editor. In computing, plain text has multiple fuzzy, interlocking meanings, but
-generally it refers to some kind of data that is stored in a <em>human readable</em>
-form, which is to say, it is comprised of a collection of text characters
-(usually ASCII, but increasingly UTF-8). A common way to store this data is with
-a <code>.txt</code> file, though code files (<code>.py</code>, <code>.R</code>) and tabular data (<code>.csv</code>) also
-fall under the heading of plain text.</p>
+<p>Before continuing on to these editors, we’ll briefly distinguish plain text from
+<strong>binary</strong> data. This distinction bears directly on what we can and cannot edit
+using a text editor. In computing, plain text has multiple fuzzy, interlocking
+meanings, but generally it refers to some kind of data that is stored in a
+<em>human readable</em> form, which is to say, it is comprised of a collection of text
+characters (usually ASCII, but increasingly UTF-8). A common way to store this
+data is with a <code>.txt</code> file, though code files (<code>.py</code>, <code>.R</code>) and tabular data
+(<code>.csv</code>) also fall under the heading of plain text.</p>
 <p>Binary data, on the other hand, is not human-readable. It is not stored in a way
 that cleanly translates to various alphanumeric characters; rather, it stores
 data as sequences of 0/1 bits without reference to characters. Often such
@@ -243,13 +243,13 @@ has been made to interact with them. Welcome to the world of proprietary softwar
 </div>
 <div id="accessing-command-line-text-editors" class="section level2" number="6.3">
 <h2><span class="header-section-number">6.3</span> Accessing Command Line Text Editors</h2>
-<p>Now that we know what we can and can’t edit on the command line, we can start
-generating some text. To do so, we’ll use a text editor called <strong>Vim</strong>. Macs and
-WSL/Ubuntu both ship with this application, so there’s no need to download it
-(other command line editors include Emacs and Nano). If you’d like to open a file
-with vim, type <code>vi</code> in a command line window, followed by the filename. You can
-also create a new file this way, simply by typing the name you’d like to use for
-that file after <code>vi</code>.</p>
+<p>Now that we know what we can and can’t edit on the command line, we can make a
+file. To do so, we’ll use a text editor called <strong>Vim</strong>. Macs and WSL/Ubuntu both
+ship with this application, so there’s no need to download it (other command line
+editors include Emacs and Nano). If you’d like to open a file with vim, type <code>vi</code>
+in a command line window, followed by the filename. You can also create a new
+file this way, simply by typing the name you’d like to use for that file
+after <code>vi</code>.</p>
 <p><img src="img/new_vim_file.png" /></p>
 <p>Vim works a bit differently than other text editors and word processors. It has
 a number of ‘modes,’ which provide different forms of interaction with a file’s
@@ -378,7 +378,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/ucdavisdatalab/workshop_introduction_to_the_command_line/edit/main/06_text-editing-with-the-command-line.Rmd",
+"link": "https://github.com/ucdavisdatalab/workshop_introduction_to_the_command_line/edit/main/06_editing-files.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -386,7 +386,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/ucdavisdatalab/workshop_introduction_to_the_command_line/blob/main/06_text-editing-with-the-command-line.Rmd",
+"link": "https://github.com/ucdavisdatalab/workshop_introduction_to_the_command_line/blob/main/06_editing-files.Rmd",
 "text": null
 },
 "download": null,

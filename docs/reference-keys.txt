@@ -20,7 +20,7 @@ file-paths
 path-hierarchies
 absolute-vs.-relative-paths
 moving-data-around
-text-editing-with-the-command-line
+editing-files
 plain-text-vs.-binary-files
 inspecting-files
 accessing-command-line-text-editors
