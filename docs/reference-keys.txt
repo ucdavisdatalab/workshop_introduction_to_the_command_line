@@ -4,6 +4,7 @@ interactive-session-information
 about-this-reader
 objectives-for-this-workshop
 prerequisites
+assessment
 installing-a-command-line-interface
 windows-subsystem-for-linux
 enabling-the-windows-subsystem-for-linux
