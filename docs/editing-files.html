@@ -25,7 +25,7 @@
 <meta name="author" content="Carl Stahmer" />
 
 
-<meta name="date" content="2021-10-20" />
+<meta name="date" content="2021-10-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -209,6 +209,17 @@ open it with a text editor. The same goes for a <code>.csv</code>:</p>
 <pre><code>$ file data.csv
 data.csv: CSV text</code></pre>
 <p>We would be able to open this as well.</p>
+<p>Finally, <code>file</code> can also tell us whether a file is in an archive format (like
+<code>.zip</code>):</p>
+<pre><code>$ file archived_file.csv.zip
+archived_file.csv.zip: Zip archive data, at least v2.0 to extract</code></pre>
+<p>Before opening this, we’d need to use the <code>unzip</code> command:</p>
+<pre><code>$ unzip archived_file.csv.zip
+  inflating: archived_file.csv.zip
+$ ls
+archived_file.csv  archived_file.csv.zip
+$ file archived_file.csv
+archived_file.csv: CSV text</code></pre>
 <p>There are two other commands that are useful for inspecting files on the
 command line. <code>cat</code> (“concatenate”) will print (or attempt to print) in plain text
 the entirety of a file’s contents on screen:</p>

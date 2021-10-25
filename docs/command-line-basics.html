@@ -25,7 +25,7 @@
 <meta name="author" content="Carl Stahmer" />
 
 
-<meta name="date" content="2021-10-20" />
+<meta name="date" content="2021-10-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -218,20 +218,50 @@ that operation to screen, and deliver a new command line prompt.</p>
 use <code>ls</code> (“list”):</p>
 <pre><code>$ ls
 backups  data.csv  jupyter_notebook.ipynb  project_folder</code></pre>
-<p>Want some more information about those files and folders? You can modify the base
+<p>You can also use <code>ls</code> on a subfolder to show its contents:</p>
+<pre><code>$ ls project_folder
+file_1.txt  file_2.txt</code></pre>
+<p>Want some more information about your files and folders? You can modify the base
 functionality of the <code>ls</code> command – and in fact you can do this for many such
-commands – with a <strong>flag</strong>. We do this by adding a dash (<code>-</code>) and then a letter,
-or a combination of letters.</p>
-<pre><code>ls -lh</code></pre>
-<p>…will print out information about the permissions, size, and date of directory
-contents, as well as the user(s) who created them:</p>
-<pre><code>$ ls -lh
-drwxrwxr-x 2 tshoe tshoe 4.0K Jun 21 23:30 backups
--rw-rw-r-- 1 tshoe tshoe  28K Oct  4 20:42 data.csv
--rw-rw-r-- 1 tshoe tshoe 6.2K Aug 27 22:44 jupyter_notebook.ipynb
-drwxrwxr-x 8 tshoe tshoe 4.0K Oct  4 21:44 project_folder</code></pre>
-<p>Depending on your particular system and/or command line interface, things might
-look slightly different on your computer. However, the basic presentation and
+commands – with <strong>flags</strong>. We do this by adding a dash (<code>-</code>) and then a letter,
+or a combination of letters, directly after the dash.</p>
+<pre><code>ls -lha</code></pre>
+<p>…will print out information about the permissions, size, and date of the current
+directory’s contents, as well as the user(s) who created them:</p>
+<pre><code>$ ls -lha
+.
+..
+.config_file
+drwxrwxr-x 2 tshoe staff 4.0K Jun 21 23:30 backups
+-rw-rw-r-- 1 tshoe staff  28K Oct  4 20:42 data.csv
+-rw-rw-r-- 1 tshoe staff 6.2K Aug 27 22:44 jupyter_notebook.ipynb
+drwxrwxr-x 8 root  root  4.0K Oct  4 21:44 project_folder</code></pre>
+<p>It’s worth walking through this output, because it demonstrates how we can bring
+important information into view with just a few keystrokes. For beginners, the
+most relevant portions of <code>ls -lha</code> are likely to be toward the end of the output,
+where the file sizes are listed along with the date each file was last modified.
+To the left of this information are listings for the file owner/file group
+(respectively, <code>tshoe</code>/<code>staff</code> and <code>root</code>/<code>root</code>). These listings help us make
+some sense of the most confusing part of the above output: those strings of <code>r</code>’s,
+<code>w</code>’s, and <code>x</code>’s. These represent the various <strong>permissions</strong> for each file.
+Permissions are specific file attributes that control which users can read (<code>r</code>),
+change (<code>w</code>), or execute (<code>x</code>) a file. Depending on what level of permissions
+you, or the user group to which you belong, have been assigned, you may or may
+not be able to work with certain files (if you’re on your personal computer,
+you likely have full permissions).</p>
+<p>Besides outputting file information, <code>ls -lha</code> also shows us three things in
+our folder that were otherwise hidden with just <code>ls</code>: <code>.</code>, <code>..</code>, and
+<code>.config_file</code>. The first two are special notation for navigating your
+computer, which we’ll discuss in a later section. The last, <code>.config_file</code>, is
+a <strong>dotfile</strong>. Dotfiles (named for the <code>.</code> that prefaces them) are hidden by
+default on your computer. They often contain various configuration settings
+that people use to customize their computers. Some will also log the history of
+commands you’ve sent via a CLI (for example, <code>.bash_history</code> or <code>.python_history</code>).
+We can’t discuss these files in depth, but for the moment it’s worth
+recognizing that they exist and that you’ll occasionally encounter them when
+working on the command lie.</p>
+<p>Depending on your particular system and/or CLI, all of the above might look
+slightly different on your computer. However, the basic presentation and
 functionality as described above will be the same. Typing is the predominant
 way of using a CLI, and the results of sending in commands with a CLI are
 text-only representations of your computer and your files.</p>
@@ -263,9 +293,14 @@ organization and documentation.</p>
 <div id="common-command-line-commands-and-more" class="section level2" number="4.4">
 <h2><span class="header-section-number">4.4</span> Common Command Line Commands (and More!)</h2>
 <p>During our hands-on workshop session we will practice using several commands,
-which are listed below.</p>
+which are listed below (along with a few other supplementary ones).</p>
 <table>
 <caption><span id="tab:unnamed-chunk-1">Table 4.1: </span></caption>
+<colgroup>
+<col width="8%" />
+<col width="33%" />
+<col width="57%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Command</th>
@@ -285,38 +320,58 @@ which are listed below.</p>
 <td align="left">Lists additional information about each file.</td>
 </tr>
 <tr class="odd">
+<td align="left">ls -h</td>
+<td align="left">List with Human-Readable flag</td>
+<td align="left">Lists file information in a human-readable format.</td>
+</tr>
+<tr class="even">
 <td align="left">ls -a</td>
 <td align="left">List with All flag</td>
 <td align="left">Lists all files, including hidden files.</td>
 </tr>
+<tr class="odd">
+<td align="left">file</td>
+<td align="left">File</td>
+<td align="left">Determines the type of file.</td>
+</tr>
 <tr class="even">
+<td align="left">cat</td>
+<td align="left">Concatenate</td>
+<td align="left">Prints the contents of a file to screen.</td>
+</tr>
+<tr class="odd">
 <td align="left">pwd</td>
 <td align="left">Print Working Directory</td>
 <td align="left">Prints the current working directory.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">mkdir</td>
 <td align="left">Make Directory</td>
 <td align="left">Creates a new file directory.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">cd</td>
 <td align="left">Change Directory</td>
 <td align="left">Navigates to another directory on the file system.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">mv</td>
 <td align="left">Move</td>
 <td align="left">Moves files.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">cp</td>
 <td align="left">Copy</td>
 <td align="left">Copies files.</td>
 </tr>
+<tr class="even">
+<td align="left">unzip</td>
+<td align="left">Unzip</td>
+<td align="left">Decompresses file archives.</td>
+</tr>
 <tr class="odd">
 <td align="left">rm</td>
-<td align="left">Remove/delete</td>
+<td align="left">Remove/Delete</td>
 <td align="left">Deletes files.</td>
 </tr>
 <tr class="even">
