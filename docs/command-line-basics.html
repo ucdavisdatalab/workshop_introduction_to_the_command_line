@@ -4,19 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Command Line Basics | Introduction to the Unix Command Line</title>
-  <meta name="description" content="4 Command Line Basics | Introduction to the Unix Command Line" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <title>5 Command Line Basics | Introduction to the Unix Command Line</title>
+  <meta name="description" content="5 Command Line Basics | Introduction to the Unix Command Line" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Command Line Basics | Introduction to the Unix Command Line" />
+  <meta property="og:title" content="5 Command Line Basics | Introduction to the Unix Command Line" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://ucdavisdatalab.github.io/workshop_introduction_to_the_command_line/" />
   
   
-  <meta name="github-repo" content="ucdavisdatalab/workshop_introduction_to_the_command_line" />
+  
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Command Line Basics | Introduction to the Unix Command Line" />
+  <meta name="twitter:title" content="5 Command Line Basics | Introduction to the Unix Command Line" />
   
   
   
@@ -25,7 +24,7 @@
 <meta name="author" content="Carl Stahmer" />
 
 
-<meta name="date" content="2022-08-11" />
+<meta name="date" content="2022-10-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -34,8 +33,8 @@
   
 <link rel="prev" href="interacting-with-our-computers-a-very-brief-primer.html"/>
 <link rel="next" href="navigation.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -51,9 +50,9 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 
@@ -76,50 +75,50 @@
 <li><a href="./">Introduction to the Unix Command Line</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a></li>
-<li class="chapter" data-level="1" data-path="preliminaries.html"><a href="preliminaries.html"><i class="fa fa-check"></i><b>1</b> Preliminaries</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Overview</a></li>
+<li class="chapter" data-level="2" data-path="preliminaries.html"><a href="preliminaries.html"><i class="fa fa-check"></i><b>2</b> Preliminaries</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="preliminaries.html"><a href="preliminaries.html#interactive-session-information"><i class="fa fa-check"></i><b>1.1</b> Interactive Session Information</a></li>
-<li class="chapter" data-level="1.2" data-path="preliminaries.html"><a href="preliminaries.html#about-this-reader"><i class="fa fa-check"></i><b>1.2</b> About this Reader</a></li>
-<li class="chapter" data-level="1.3" data-path="preliminaries.html"><a href="preliminaries.html#objectives-for-this-workshop"><i class="fa fa-check"></i><b>1.3</b> Objectives for this Workshop</a></li>
-<li class="chapter" data-level="1.4" data-path="preliminaries.html"><a href="preliminaries.html#prerequisites"><i class="fa fa-check"></i><b>1.4</b> Prerequisites</a></li>
-<li class="chapter" data-level="1.5" data-path="preliminaries.html"><a href="preliminaries.html#assessment"><i class="fa fa-check"></i><b>1.5</b> Assessment</a></li>
+<li class="chapter" data-level="2.1" data-path="preliminaries.html"><a href="preliminaries.html#interactive-session-information"><i class="fa fa-check"></i><b>2.1</b> Interactive Session Information</a></li>
+<li class="chapter" data-level="2.2" data-path="preliminaries.html"><a href="preliminaries.html#about-this-reader"><i class="fa fa-check"></i><b>2.2</b> About this Reader</a></li>
+<li class="chapter" data-level="2.3" data-path="preliminaries.html"><a href="preliminaries.html#objectives-for-this-workshop"><i class="fa fa-check"></i><b>2.3</b> Objectives for this Workshop</a></li>
+<li class="chapter" data-level="2.4" data-path="preliminaries.html"><a href="preliminaries.html#prerequisites"><i class="fa fa-check"></i><b>2.4</b> Prerequisites</a></li>
+<li class="chapter" data-level="2.5" data-path="preliminaries.html"><a href="preliminaries.html#assessment"><i class="fa fa-check"></i><b>2.5</b> Assessment</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="installing-a-command-line-interface.html"><a href="installing-a-command-line-interface.html"><i class="fa fa-check"></i><b>2</b> Installing a Command Line Interface</a>
+<li class="chapter" data-level="3" data-path="installing-a-command-line-interface.html"><a href="installing-a-command-line-interface.html"><i class="fa fa-check"></i><b>3</b> Installing a Command Line Interface</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="installing-a-command-line-interface.html"><a href="installing-a-command-line-interface.html#git-bash"><i class="fa fa-check"></i><b>2.1</b> Git Bash</a></li>
-<li class="chapter" data-level="2.2" data-path="installing-a-command-line-interface.html"><a href="installing-a-command-line-interface.html#installing-git-and-git-bash"><i class="fa fa-check"></i><b>2.2</b> Installing Git and Git Bash</a></li>
+<li class="chapter" data-level="3.1" data-path="installing-a-command-line-interface.html"><a href="installing-a-command-line-interface.html#git-bash"><i class="fa fa-check"></i><b>3.1</b> Git Bash</a></li>
+<li class="chapter" data-level="3.2" data-path="installing-a-command-line-interface.html"><a href="installing-a-command-line-interface.html#installing-git-and-git-bash"><i class="fa fa-check"></i><b>3.2</b> Installing Git and Git Bash</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="interacting-with-our-computers-a-very-brief-primer.html"><a href="interacting-with-our-computers-a-very-brief-primer.html"><i class="fa fa-check"></i><b>3</b> Interacting with Our Computers: A Very Brief Primer</a>
+<li class="chapter" data-level="4" data-path="interacting-with-our-computers-a-very-brief-primer.html"><a href="interacting-with-our-computers-a-very-brief-primer.html"><i class="fa fa-check"></i><b>4</b> Interacting with Our Computers: A Very Brief Primer</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="interacting-with-our-computers-a-very-brief-primer.html"><a href="interacting-with-our-computers-a-very-brief-primer.html#to-the-command-line-a-mentality-shift"><i class="fa fa-check"></i><b>3.1</b> To the Command Line: A Mentality Shift</a></li>
+<li class="chapter" data-level="4.1" data-path="interacting-with-our-computers-a-very-brief-primer.html"><a href="interacting-with-our-computers-a-very-brief-primer.html#to-the-command-line-a-mentality-shift"><i class="fa fa-check"></i><b>4.1</b> To the Command Line: A Mentality Shift</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="command-line-basics.html"><a href="command-line-basics.html"><i class="fa fa-check"></i><b>4</b> Command Line Basics</a>
+<li class="chapter" data-level="5" data-path="command-line-basics.html"><a href="command-line-basics.html"><i class="fa fa-check"></i><b>5</b> Command Line Basics</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="command-line-basics.html"><a href="command-line-basics.html#the-anatomy-of-the-command-line"><i class="fa fa-check"></i><b>4.1</b> The Anatomy of the Command Line</a></li>
-<li class="chapter" data-level="4.2" data-path="command-line-basics.html"><a href="command-line-basics.html#interacting-with-the-command-line"><i class="fa fa-check"></i><b>4.2</b> Interacting with the Command Line</a></li>
-<li class="chapter" data-level="4.3" data-path="command-line-basics.html"><a href="command-line-basics.html#command-syntax"><i class="fa fa-check"></i><b>4.3</b> Command Syntax</a></li>
-<li class="chapter" data-level="4.4" data-path="command-line-basics.html"><a href="command-line-basics.html#common-command-line-commands-and-more"><i class="fa fa-check"></i><b>4.4</b> Common Command Line Commands (and More!)</a></li>
-<li class="chapter" data-level="4.5" data-path="command-line-basics.html"><a href="command-line-basics.html#when-problems-arise"><i class="fa fa-check"></i><b>4.5</b> When Problems Arise</a></li>
+<li class="chapter" data-level="5.1" data-path="command-line-basics.html"><a href="command-line-basics.html#the-anatomy-of-the-command-line"><i class="fa fa-check"></i><b>5.1</b> The Anatomy of the Command Line</a></li>
+<li class="chapter" data-level="5.2" data-path="command-line-basics.html"><a href="command-line-basics.html#interacting-with-the-command-line"><i class="fa fa-check"></i><b>5.2</b> Interacting with the Command Line</a></li>
+<li class="chapter" data-level="5.3" data-path="command-line-basics.html"><a href="command-line-basics.html#command-syntax"><i class="fa fa-check"></i><b>5.3</b> Command Syntax</a></li>
+<li class="chapter" data-level="5.4" data-path="command-line-basics.html"><a href="command-line-basics.html#common-command-line-commands-and-more"><i class="fa fa-check"></i><b>5.4</b> Common Command Line Commands (and More!)</a></li>
+<li class="chapter" data-level="5.5" data-path="command-line-basics.html"><a href="command-line-basics.html#when-problems-arise"><i class="fa fa-check"></i><b>5.5</b> When Problems Arise</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="navigation.html"><a href="navigation.html"><i class="fa fa-check"></i><b>5</b> Navigation</a>
+<li class="chapter" data-level="6" data-path="navigation.html"><a href="navigation.html"><i class="fa fa-check"></i><b>6</b> Navigation</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="navigation.html"><a href="navigation.html#file-paths"><i class="fa fa-check"></i><b>5.1</b> File Paths</a></li>
-<li class="chapter" data-level="5.2" data-path="navigation.html"><a href="navigation.html#path-hierarchies"><i class="fa fa-check"></i><b>5.2</b> Path Hierarchies</a></li>
-<li class="chapter" data-level="5.3" data-path="navigation.html"><a href="navigation.html#absolute-vs.-relative-paths"><i class="fa fa-check"></i><b>5.3</b> Absolute vs. Relative Paths</a></li>
-<li class="chapter" data-level="5.4" data-path="navigation.html"><a href="navigation.html#moving-data-around"><i class="fa fa-check"></i><b>5.4</b> Moving Data Around</a></li>
+<li class="chapter" data-level="6.1" data-path="navigation.html"><a href="navigation.html#file-paths"><i class="fa fa-check"></i><b>6.1</b> File Paths</a></li>
+<li class="chapter" data-level="6.2" data-path="navigation.html"><a href="navigation.html#path-hierarchies"><i class="fa fa-check"></i><b>6.2</b> Path Hierarchies</a></li>
+<li class="chapter" data-level="6.3" data-path="navigation.html"><a href="navigation.html#absolute-vs.-relative-paths"><i class="fa fa-check"></i><b>6.3</b> Absolute vs. Relative Paths</a></li>
+<li class="chapter" data-level="6.4" data-path="navigation.html"><a href="navigation.html#moving-data-around"><i class="fa fa-check"></i><b>6.4</b> Moving Data Around</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="editing-files.html"><a href="editing-files.html"><i class="fa fa-check"></i><b>6</b> Editing Files</a>
+<li class="chapter" data-level="7" data-path="editing-files.html"><a href="editing-files.html"><i class="fa fa-check"></i><b>7</b> Editing Files</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="editing-files.html"><a href="editing-files.html#plain-text-vs.-binary-files"><i class="fa fa-check"></i><b>6.1</b> Plain Text vs. Binary Files</a></li>
-<li class="chapter" data-level="6.2" data-path="editing-files.html"><a href="editing-files.html#inspecting-files"><i class="fa fa-check"></i><b>6.2</b> Inspecting Files</a></li>
-<li class="chapter" data-level="6.3" data-path="editing-files.html"><a href="editing-files.html#accessing-command-line-text-editors"><i class="fa fa-check"></i><b>6.3</b> Accessing Command Line Text Editors</a></li>
-<li class="chapter" data-level="6.4" data-path="editing-files.html"><a href="editing-files.html#basic-vim-commands"><i class="fa fa-check"></i><b>6.4</b> Basic Vim Commands</a></li>
-<li class="chapter" data-level="6.5" data-path="editing-files.html"><a href="editing-files.html#cleaning-up"><i class="fa fa-check"></i><b>6.5</b> Cleaning Up</a></li>
+<li class="chapter" data-level="7.1" data-path="editing-files.html"><a href="editing-files.html#plain-text-vs.-binary-files"><i class="fa fa-check"></i><b>7.1</b> Plain Text vs. Binary Files</a></li>
+<li class="chapter" data-level="7.2" data-path="editing-files.html"><a href="editing-files.html#inspecting-files"><i class="fa fa-check"></i><b>7.2</b> Inspecting Files</a></li>
+<li class="chapter" data-level="7.3" data-path="editing-files.html"><a href="editing-files.html#accessing-command-line-text-editors"><i class="fa fa-check"></i><b>7.3</b> Accessing Command Line Text Editors</a></li>
+<li class="chapter" data-level="7.4" data-path="editing-files.html"><a href="editing-files.html#basic-vim-commands"><i class="fa fa-check"></i><b>7.4</b> Basic Vim Commands</a></li>
+<li class="chapter" data-level="7.5" data-path="editing-files.html"><a href="editing-files.html#cleaning-up"><i class="fa fa-check"></i><b>7.5</b> Cleaning Up</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="end.html"><a href="end.html"><i class="fa fa-check"></i><b>7</b> End</a>
+<li class="chapter" data-level="8" data-path="end.html"><a href="end.html"><i class="fa fa-check"></i><b>8</b> End</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="end.html"><a href="end.html#resources-referenced"><i class="fa fa-check"></i><b>7.1</b> Resources Referenced</a></li>
+<li class="chapter" data-level="8.1" data-path="end.html"><a href="end.html#resources-referenced"><i class="fa fa-check"></i><b>8.1</b> Resources Referenced</a></li>
 </ul></li>
 <li class="divider"></li>
 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
@@ -143,8 +142,8 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="command-line-basics" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Command Line Basics</h1>
+<div id="command-line-basics" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Command Line Basics<a href="command-line-basics.html#command-line-basics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>To use the command line, we need to launch a special program. <strong>Mac users</strong> will
 use a terminal application called – fittingly – “Terminal.” It ships by default
 on macOS.</p>
@@ -153,7 +152,7 @@ on macOS.</p>
 <p>Applications -&gt; Utilities -&gt; Terminal</p>
 </blockquote>
 <p>When you launch the application, you will see something like this:</p>
-<p><img src="img/prompt.png" /></p>
+<p><img src="img/prompt.png" alt="Mac Terminal window" /></p>
 <p><strong>Windows</strong> users will use the Git Bash terminal. Instructions for installing
 this program are in the second section of this workshop reader.</p>
 <p>To launch Git Bash, go to:</p>
@@ -165,9 +164,9 @@ this program are in the second section of this workshop reader.</p>
 <p>Click on the Windows Start Menu, select Programs, and browse to Git Bash</p>
 </blockquote>
 <p>When you launch the application, you will see something like this:</p>
-<p><img src="img/wsl_command_line.jpg" /></p>
-<div id="the-anatomy-of-the-command-line" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> The Anatomy of the Command Line</h2>
+<p><img src="img/wsl_command_line.jpg" alt="Git Bash terminal window" /></p>
+<div id="the-anatomy-of-the-command-line" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> The Anatomy of the Command Line<a href="command-line-basics.html#the-anatomy-of-the-command-line" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>While the command line can look intimidating to those raised on a GUI, it’s
 important to know that both of the programs above are <em>interfaces</em> in the same
 way that your computer’s default windowing system is an interface. That is, even
@@ -181,7 +180,7 @@ do with a GUI, you type in your commands with a CLI. In this way, a CLI is more
 like a typewriter than it is a desktop (an even better analogue would be a
 <a href="https://en.wikipedia.org/wiki/Teleprinter">teleprinter</a>).</p>
 <p>To see this, let’s return to the window that opens when you start Terminal or Ubuntu.</p>
-<p><img src="img/prompt.png" /></p>
+<p><img src="img/prompt.png" alt="Mac Terminal window" /></p>
 <p>Everything that will happen in this window happens on a line-by-line basis. Here,
 we see the command line <strong>prompt</strong>, where you’ll type your commands. The prompt
 itself offers valuable information about your computer. The beginning of the line,
@@ -193,7 +192,7 @@ information displayed as a reference point.</p>
 us where in the computer’s filesystem we are. We’ll discuss this later. For now,
 just keep in mind that you can look here to find your current location. In this
 case, <code>~</code> means you are in your <strong>home</strong> directory.</p>
-<p><img src="img/prompt_home_highlight.png" /></p>
+<p><img src="img/prompt_home_highlight.png" alt="Mac Terminal with the Home symbol highlighted" /></p>
 <p>After the location, we see the <code>$</code> character. It is an indicator that lets you
 know the command line application is waiting for you to enter something. (Note
 that you do not need to type this character, it will appear automatically, but
@@ -206,8 +205,8 @@ Since you can’t click around with a mouse in a CLI, you’ll have to use your
 computer’s <code>Left</code> and <code>Right</code> arrows to move the cursor to your desired location
 and make any changes from there.</p>
 </div>
-<div id="interacting-with-the-command-line" class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> Interacting with the Command Line</h2>
+<div id="interacting-with-the-command-line" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Interacting with the Command Line<a href="command-line-basics.html#interacting-with-the-command-line" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Now we can enter some commands, which is simply a matter of typing them in after
 the prompt. For example:</p>
 <pre><code>$ echo</code></pre>
@@ -271,8 +270,8 @@ functionality as described above will be the same. Typing is the predominant
 way of using a CLI, and the results of sending in commands with a CLI are
 text-only representations of your computer and your files.</p>
 </div>
-<div id="command-syntax" class="section level2" number="4.3">
-<h2><span class="header-section-number">4.3</span> Command Syntax</h2>
+<div id="command-syntax" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Command Syntax<a href="command-line-basics.html#command-syntax" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>As you can see, the <strong>syntax</strong> of commands is straightforward. Commands use a
 space to delimit their different components, and flags are called with <code>-</code> to
 modify those commands. When put together, we can generalize these components
@@ -295,12 +294,12 @@ interested to learn more about what conventions you might use in place of spaces
 see this <a href="https://ucdavisdatalab.github.io/workshop_how-to-data-documentation/#file-names">section on file names</a> in the DataLab’s workshop reader about project
 organization and documentation.</p>
 </div>
-<div id="common-command-line-commands-and-more" class="section level2" number="4.4">
-<h2><span class="header-section-number">4.4</span> Common Command Line Commands (and More!)</h2>
+<div id="common-command-line-commands-and-more" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Common Command Line Commands (and More!)<a href="command-line-basics.html#common-command-line-commands-and-more" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>During our hands-on workshop session we will practice using several commands,
 which are listed below (along with a few other supplementary ones).</p>
 <table>
-<caption><span id="tab:unnamed-chunk-1">Table 4.1: </span></caption>
+<caption><span id="tab:unnamed-chunk-1">Table 5.1: </span></caption>
 <colgroup>
 <col width="8%" />
 <col width="33%" />
@@ -452,8 +451,8 @@ engine, or visit Stack Exchange and search there. CLIs are widely used software,
 and chances are incredibly good that someone else has had the same question you
 want to ask.</p>
 </div>
-<div id="when-problems-arise" class="section level2" number="4.5">
-<h2><span class="header-section-number">4.5</span> When Problems Arise</h2>
+<div id="when-problems-arise" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> When Problems Arise<a href="command-line-basics.html#when-problems-arise" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Error messages offer another, admittedly less pleasant way to learn about how a
 command works. When you’re first starting out with any kind of console-based
 software (whether it be a CLI or writing code), one of the most important skills
@@ -502,7 +501,6 @@ computer.</p>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -532,6 +530,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 }
