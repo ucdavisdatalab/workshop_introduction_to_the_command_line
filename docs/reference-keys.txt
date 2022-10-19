@@ -5,7 +5,6 @@ interactive-session-information
 about-this-reader
 objectives-for-this-workshop
 prerequisites
-assessment
 installing-a-command-line-interface
 git-bash
 installing-git-and-git-bash
@@ -30,3 +29,4 @@ basic-vim-commands
 cleaning-up
 end
 resources-referenced
+assessment
