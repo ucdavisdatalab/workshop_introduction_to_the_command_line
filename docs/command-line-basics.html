@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 Command Line Basics | Introduction to the Unix Command Line</title>
   <meta name="description" content="5 Command Line Basics | Introduction to the Unix Command Line" />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 Command Line Basics | Introduction to the Unix Command Line" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Carl Stahmer" />
 
 
-<meta name="date" content="2022-10-19" />
+<meta name="date" content="2023-03-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -144,9 +144,9 @@
             <section class="normal" id="section-">
 <div id="command-line-basics" class="section level1 hasAnchor" number="5">
 <h1><span class="header-section-number">5</span> Command Line Basics<a href="command-line-basics.html#command-line-basics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>To use the command line, we need to launch a special program. <strong>Mac users</strong> will
-use a terminal application called – fittingly – “Terminal.” It ships by default
-on macOS.</p>
+<p>To use the command line, we need to launch a special program. <strong>Mac users</strong>
+will use a terminal application called – fittingly – “Terminal.” It ships by
+default on macOS.</p>
 <p>To launch Terminal, go to:</p>
 <blockquote>
 <p>Applications -&gt; Utilities -&gt; Terminal</p>
@@ -169,29 +169,30 @@ this program are in the second section of this workshop reader.</p>
 <h2><span class="header-section-number">5.1</span> The Anatomy of the Command Line<a href="command-line-basics.html#the-anatomy-of-the-command-line" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>While the command line can look intimidating to those raised on a GUI, it’s
 important to know that both of the programs above are <em>interfaces</em> in the same
-way that your computer’s default windowing system is an interface. That is, even
-though a CLI is something of a bare bones representation of your computer, it
-too relies on a series of assumptions and metaphors that serve to frame how
+way that your computer’s default windowing system is an interface. That is,
+even though a CLI is something of a bare bones representation of your computer,
+it too relies on a series of assumptions and metaphors that serve to frame how
 you interact with your computer. Using the CLI may feel strange at first, but
 part of that feeling comes from not being acclimated to the way it <em>represents</em>
 a computer.</p>
-<p>For example, instead of pointing and clicking on things in your computer, as you’d
-do with a GUI, you type in your commands with a CLI. In this way, a CLI is more
-like a typewriter than it is a desktop (an even better analogue would be a
-<a href="https://en.wikipedia.org/wiki/Teleprinter">teleprinter</a>).</p>
-<p>To see this, let’s return to the window that opens when you start Terminal or Ubuntu.</p>
+<p>For example, instead of pointing and clicking on things in your computer, as
+you’d do with a GUI, you type in your commands with a CLI. In this way, a CLI
+is more like a typewriter than it is a desktop (an even better analogue would
+be a <a href="https://en.wikipedia.org/wiki/Teleprinter">teleprinter</a>).</p>
+<p>To see this, let’s return to the window that opens when you start Terminal or
+Ubuntu.</p>
 <p><img src="img/prompt.png" alt="Mac Terminal window" /></p>
-<p>Everything that will happen in this window happens on a line-by-line basis. Here,
-we see the command line <strong>prompt</strong>, where you’ll type your commands. The prompt
-itself offers valuable information about your computer. The beginning of the line,
-<code>tshoe@ds</code>, tells us the current user (<code>tshoe</code>) and current computer (<code>ds</code>).
-This may seem redundant, but with the command line it is possible to interact
-with remote computers via a network, so it can be helpful to have this
+<p>Everything that will happen in this window happens on a line-by-line basis.
+Here, we see the command line <strong>prompt</strong>, where you’ll type your commands. The
+prompt itself offers valuable information about your computer. The beginning of
+the line, <code>tshoe@ds</code>, tells us the current user (<code>tshoe</code>) and current computer
+(<code>ds</code>). This may seem redundant, but with the command line it is possible to
+interact with remote computers via a network, so it can be helpful to have this
 information displayed as a reference point.</p>
-<p>The bit of information after the colon (in this example, the <code>~</code> character) tells
-us where in the computer’s filesystem we are. We’ll discuss this later. For now,
-just keep in mind that you can look here to find your current location. In this
-case, <code>~</code> means you are in your <strong>home</strong> directory.</p>
+<p>The bit of information after the colon (in this example, the <code>~</code> character)
+tells us where in the computer’s filesystem we are. We’ll discuss this later.
+For now, just keep in mind that you can look here to find your current
+location. In this case, <code>~</code> means you are in your <strong>home</strong> directory.</p>
 <p><img src="img/prompt_home_highlight.png" alt="Mac Terminal with the Home symbol highlighted" /></p>
 <p>After the location, we see the <code>$</code> character. It is an indicator that lets you
 know the command line application is waiting for you to enter something. (Note
@@ -202,22 +203,22 @@ see a solid or flashing box that appears after the prompt character. This is a
 <strong>cursor position indicator</strong> and it tells you where the current cursor is in
 the terminal. This is useful if you need to go back and correct and error.
 Since you can’t click around with a mouse in a CLI, you’ll have to use your
-computer’s <code>Left</code> and <code>Right</code> arrows to move the cursor to your desired location
-and make any changes from there.</p>
+computer’s <code>Left</code> and <code>Right</code> arrows to move the cursor to your desired
+location and make any changes from there.</p>
 </div>
 <div id="interacting-with-the-command-line" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> Interacting with the Command Line<a href="command-line-basics.html#interacting-with-the-command-line" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Now we can enter some commands, which is simply a matter of typing them in after
-the prompt. For example:</p>
+<p>Now we can enter some commands, which is simply a matter of typing them in
+after the prompt. For example:</p>
 <pre><code>$ echo</code></pre>
-<p>…will print back to screen any text that you supply to the command. It literally
-echoes your text:</p>
+<p>…will print back to screen any text that you supply to the command. It
+literally echoes your text:</p>
 <pre><code>$ echo &quot;Hello world!&quot;
 Hello world!</code></pre>
-<p>To execute this, or any command, you simply hit the <code>Return</code>/<code>Enter</code> key on your
-keyboard. You’ll see that when you execute a command, your computer’s shell
-program will interpret and execute the indicated operation, print any output from
-that operation to screen, and deliver a new command line prompt.</p>
+<p>To execute this, or any command, you simply hit the <code>Return</code>/<code>Enter</code> key on
+your keyboard. You’ll see that when you execute a command, your computer’s
+shell program will interpret and execute the indicated operation, print any
+output from that operation to screen, and deliver a new command line prompt.</p>
 <p>If you want to see what files and folders are in your home directory, you can
 use <code>ls</code> (“list”):</p>
 <pre><code>$ ls
@@ -225,13 +226,13 @@ backups  data.csv  jupyter_notebook.ipynb  project_folder</code></pre>
 <p>You can also use <code>ls</code> on a subfolder to show its contents:</p>
 <pre><code>$ ls project_folder
 file_1.txt  file_2.txt</code></pre>
-<p>Want some more information about your files and folders? You can modify the base
-functionality of the <code>ls</code> command – and in fact you can do this for many such
-commands – with <strong>flags</strong>. We do this by adding a dash (<code>-</code>) and then a letter,
-or a combination of letters, directly after the dash.</p>
+<p>Want some more information about your files and folders? You can modify the
+base functionality of the <code>ls</code> command – and in fact you can do this for many
+such commands – with <strong>flags</strong>. We do this by adding a dash (<code>-</code>) and then a
+letter, or a combination of letters, directly after the dash.</p>
 <pre><code>ls -lha</code></pre>
-<p>…will print out information about the permissions, size, and date of the current
-directory’s contents, as well as the user(s) who created them:</p>
+<p>…will print out information about the permissions, size, and date of the
+current directory’s contents, as well as the user(s) who created them:</p>
 <pre><code>$ ls -lha
 .
 ..
@@ -240,19 +241,19 @@ drwxrwxr-x 2 tshoe staff 4.0K Jun 21 23:30 backups
 -rw-rw-r-- 1 tshoe staff  28K Oct  4 20:42 data.csv
 -rw-rw-r-- 1 tshoe staff 6.2K Aug 27 22:44 jupyter_notebook.ipynb
 drwxrwxr-x 8 root  root  4.0K Oct  4 21:44 project_folder</code></pre>
-<p>It’s worth walking through this output, because it demonstrates how we can bring
-important information into view with just a few keystrokes. For beginners, the
-most relevant portions of <code>ls -lha</code> are likely to be toward the end of the output,
-where the file sizes are listed along with the date each file was last modified.
-To the left of this information are listings for the file owner/file group
-(respectively, <code>tshoe</code>/<code>staff</code> and <code>root</code>/<code>root</code>). These listings help us make
-some sense of the most confusing part of the above output: those strings of <code>r</code>’s,
-<code>w</code>’s, and <code>x</code>’s. These represent the various <strong>permissions</strong> for each file.
-Permissions are specific file attributes that control which users can read (<code>r</code>),
-change (<code>w</code>), or execute (<code>x</code>) a file. Depending on what level of permissions
-you, or the user group to which you belong, have been assigned, you may or may
-not be able to work with certain files (if you’re on your personal computer,
-you likely have full permissions).</p>
+<p>It’s worth walking through this output, because it demonstrates how we can
+bring important information into view with just a few keystrokes. For
+beginners, the most relevant portions of <code>ls -lha</code> are likely to be toward the
+end of the output, where the file sizes are listed along with the date each
+file was last modified. To the left of this information are listings for the
+file owner/file group (respectively, <code>tshoe</code>/<code>staff</code> and <code>root</code>/<code>root</code>). These
+listings help us make some sense of the most confusing part of the above
+output: those strings of <code>r</code>’s, <code>w</code>’s, and <code>x</code>’s. These represent the various
+<strong>permissions</strong> for each file. Permissions are specific file attributes that
+control which users can read (<code>r</code>), change (<code>w</code>), or execute (<code>x</code>) a file.
+Depending on what level of permissions you, or the user group to which you
+belong, have been assigned, you may or may not be able to work with certain
+files (if you’re on your personal computer, you likely have full permissions).</p>
 <p>Besides outputting file information, <code>ls -lha</code> also shows us three things in
 our folder that were otherwise hidden with just <code>ls</code>: <code>.</code>, <code>..</code>, and
 <code>.config_file</code>. The first two are special notation for navigating your
@@ -260,10 +261,10 @@ computer, which we’ll discuss in a later section. The last, <code>.config_file
 a <strong>dotfile</strong>. Dotfiles (named for the <code>.</code> that prefaces them) are hidden by
 default on your computer. They often contain various configuration settings
 that people use to customize their computers. Some will also log the history of
-commands you’ve sent via a CLI (for example, <code>.bash_history</code> or <code>.python_history</code>).
-We can’t discuss these files in depth, but for the moment it’s worth
-recognizing that they exist and that you’ll occasionally encounter them when
-working on the command lie.</p>
+commands you’ve sent via a CLI (for example, <code>.bash_history</code> or
+<code>.python_history</code>). We can’t discuss these files in depth, but for the moment
+it’s worth recognizing that they exist and that you’ll occasionally encounter
+them when working on the command lie.</p>
 <p>Depending on your particular system and/or CLI, all of the above might look
 slightly different on your computer. However, the basic presentation and
 functionality as described above will be the same. Typing is the predominant
@@ -278,11 +279,11 @@ modify those commands. When put together, we can generalize these components
 look like so:</p>
 <pre><code>$ [command] [optional flags] [file, data, or other pointer on which to run the command]</code></pre>
 <p>There is one caveat to this: because commands use spaces to delimit their
-components, you can run into problems when running commands on files with spaces
-in their names. Your command line interface program will interpret that file’s
-spaces as separate components and an error will almost surely result. If you’re
-running a command on a file with a space in its name, you’ll need to <strong>escape</strong>
-that space with <code>\</code>.</p>
+components, you can run into problems when running commands on files with
+spaces in their names. Your command line interface program will interpret that
+file’s spaces as separate components and an error will almost surely result. If
+you’re running a command on a file with a space in its name, you’ll need to
+<strong>escape</strong> that space with <code>\</code>.</p>
 <p>This will throw an error:</p>
 <pre><code>$ [command] file name.txt</code></pre>
 <p>This will not:</p>
@@ -290,9 +291,9 @@ that space with <code>\</code>.</p>
 <p>While escape characters are perfectly workable, they can be a bit of a pain to
 type over and over. For this reason, people who use the command line in their
 daily work often avoid spaces altogether when naming their files. If you’re
-interested to learn more about what conventions you might use in place of spaces,
-see this <a href="https://ucdavisdatalab.github.io/workshop_how-to-data-documentation/#file-names">section on file names</a> in the DataLab’s workshop reader about project
-organization and documentation.</p>
+interested to learn more about what conventions you might use in place of
+spaces, see this <a href="https://ucdavisdatalab.github.io/workshop_how-to-data-documentation/#file-names">section on file names</a> in the DataLab’s workshop reader
+about project organization and documentation.</p>
 </div>
 <div id="common-command-line-commands-and-more" class="section level2 hasAnchor" number="5.4">
 <h2><span class="header-section-number">5.4</span> Common Command Line Commands (and More!)<a href="command-line-basics.html#common-command-line-commands-and-more" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -385,14 +386,14 @@ which are listed below (along with a few other supplementary ones).</p>
 </tr>
 </tbody>
 </table>
-<p>A more complete list of Unix Commands may be found on Valerie Henderson Summet’s
-<a href="cheatsheet.pdf">Unix Cheat Sheet</a>. That said, there are dozens of base commands, each with
-their own set of flags, and it’s possible to install software that will expand
-that number even more. We can’t go over everything in the workshop, but
-familiarizing yourself with the basic command syntax will help you find your way
-around new commands.</p>
-<p>One other thing that will help you learn about new commands is <code>man</code> (“manual”).
-This opens the manual page for another command:</p>
+<p>A more complete list of Unix Commands may be found on Valerie Henderson
+Summet’s <a href="cheatsheet.pdf">Unix Cheat Sheet</a>. That said, there are dozens of base commands,
+each with their own set of flags, and it’s possible to install software that
+will expand that number even more. We can’t go over everything in the workshop,
+but familiarizing yourself with the basic command syntax will help you find
+your way around new commands.</p>
+<p>One other thing that will help you learn about new commands is <code>man</code>
+(“manual”). This opens the manual page for another command:</p>
 <pre><code>$ man ls</code></pre>
 <p>…opens:</p>
 <pre><code>LS(1)                                               User Commands                                               LS(1)
@@ -438,28 +439,30 @@ DESCRIPTION
        -d, --directory
               list directories themselves, not their contents
 [...]</code></pre>
-<p>As opposed to the usually mute, minimalist disposition of a CLI, here you can see
-thorough documentation for a given command and its various flags. A visually
-condensed version of this information is also accessible by flagging a command
-with <code>--help</code>, as in <code>ls --help</code>. Sometimes it can also be helpful to know what
-version of a command you’re using, as commands themselves can be updated. You
-can find this information for some commands with <code>--version</code>, or <code>--v</code>:</p>
+<p>As opposed to the usually mute, minimalist disposition of a CLI, here you can
+see thorough documentation for a given command and its various flags. A
+visually condensed version of this information is also accessible by flagging a
+command with <code>--help</code>, as in <code>ls --help</code>. Sometimes it can also be helpful to
+know what version of a command you’re using, as commands themselves can be
+updated. You can find this information for some commands with <code>--version</code>, or
+<code>--v</code>:</p>
 <pre><code>$ man --v
 man, version 1.6g</code></pre>
 <p>Still unclear about what a command does? Look it up with your favorite search
-engine, or visit Stack Exchange and search there. CLIs are widely used software,
-and chances are incredibly good that someone else has had the same question you
-want to ask.</p>
+engine, or visit Stack Exchange and search there. CLIs are widely used
+software, and chances are incredibly good that someone else has had the same
+question you want to ask.</p>
 </div>
 <div id="when-problems-arise" class="section level2 hasAnchor" number="5.5">
 <h2><span class="header-section-number">5.5</span> When Problems Arise<a href="command-line-basics.html#when-problems-arise" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Error messages offer another, admittedly less pleasant way to learn about how a
 command works. When you’re first starting out with any kind of console-based
-software (whether it be a CLI or writing code), one of the most important skills
-you can learn is how to read an error message. For the most part, such messages
-are quite clear; they’re intended to help you debug your problem and thus attempt
-to supply you with information about what might be going wrong.</p>
-<p>As an example, if you’re at your home directory, and it looks like the following:</p>
+software (whether it be a CLI or writing code), one of the most important
+skills you can learn is how to read an error message. For the most part, such
+messages are quite clear; they’re intended to help you debug your problem and
+thus attempt to supply you with information about what might be going wrong.</p>
+<p>As an example, if you’re at your home directory, and it looks like the
+following:</p>
 <pre><code>$ ls
 backups  data.csv  jupyter_notebook.ipynb  project_folder</code></pre>
 <p>…and you decide to <code>ls</code> a folder within this directory that doesn’t exist:</p>
@@ -477,10 +480,11 @@ zsh: command not found: echohello</code></pre>
 <p>Or in other words, you’ve sent in a command that’s either invalid or is
 unavailable. These messages are both fairly clear, but if you’re ever confused,
 or if you simply want to find out more about an error, a search engine is once
-again your friend. Sometimes simply copy/pasting the error message and searching
-on that alone will lead directly to information about what went wrong.</p>
-<p>That all said, sometimes you need to stop a CLI process immediately. Did you, for
-example, do something that causes your computer to print a million lines on
+again your friend. Sometimes simply copy/pasting the error message and
+searching on that alone will lead directly to information about what went
+wrong.</p>
+<p>That all said, sometimes you need to stop a CLI process immediately. Did you,
+for example, do something that causes your computer to print a million lines on
 screen? Did you decide you don’t want a file copied to a new location, and it’s
 still in the midst of transferring? You can <strong>interrupt</strong> any command with
 <code>CTRL+C</code>. This will stop whatever current process is running in your interface.</p>

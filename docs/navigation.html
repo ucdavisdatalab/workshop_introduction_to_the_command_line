@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6 Navigation | Introduction to the Unix Command Line</title>
   <meta name="description" content="6 Navigation | Introduction to the Unix Command Line" />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6 Navigation | Introduction to the Unix Command Line" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Carl Stahmer" />
 
 
-<meta name="date" content="2022-10-19" />
+<meta name="date" content="2023-03-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -146,24 +146,25 @@
 <h1><span class="header-section-number">6</span> Navigation<a href="navigation.html#navigation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Due to the nature of its stripped down display, the command line interface can
 at times feel a bit static. But it offers much of the same functionality that
-modern GUIs offer, including the ability to move around your computer. With GUIs,
-we tend to navigate with our mouses; on the command line, we’ll use our keyboard.
-The live workshop session will cover this in depth, but for now it’s important to
-have a working sense of how your files are structured.</p>
+modern GUIs offer, including the ability to move around your computer. With
+GUIs, we tend to navigate with our mouses; on the command line, we’ll use our
+keyboard. The live workshop session will cover this in depth, but for now it’s
+important to have a working sense of how your files are structured.</p>
 <div id="file-paths" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> File Paths<a href="navigation.html#file-paths" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Broadly speaking, your computer is comprised of <strong>files</strong> (chunks of data) and
-<strong>directories</strong> (or “folders”). The way your computer organizes this information
-is called a <strong>directory structure</strong>. This structure is like a map of all the
-places you can navigate to you in your computer. Each file has an <strong>address</strong>
-on this map, and there is a <strong>path</strong> that leads to it. When you use a GUI, your
-computer does the work of determining which path to follow to find the file or
-folder you’d like to open, but performing the same operation with a CLI requires
-us to manually specify where we’d like to go.</p>
+<strong>directories</strong> (or “folders”). The way your computer organizes this
+information is called a <strong>directory structure</strong>. This structure is like a map
+of all the places you can navigate to you in your computer. Each file has an
+<strong>address</strong> on this map, and there is a <strong>path</strong> that leads to it. When you use
+a GUI, your computer does the work of determining which path to follow to find
+the file or folder you’d like to open, but performing the same operation with a
+CLI requires us to manually specify where we’d like to go.</p>
 <p>In a Unix environment, we do this with the following syntax:</p>
 <pre><code>/this/is/a/path/to/your/file.txt</code></pre>
-<p>This is called a <strong>file path</strong>. It threads through several different directories
-to point directly and specifically at your desired file, <code>file.txt</code>.</p>
+<p>This is called a <strong>file path</strong>. It threads through several different
+directories to point directly and specifically at your desired file,
+<code>file.txt</code>.</p>
 <p><strong>Note:</strong> non-Unix environments on Windows will use <code>\</code> instead of <code>/</code>. This
 isn’t as important to know for our workshop, but if you use file paths in other
 instances it may factor in to the way you write out a path.</p>
@@ -176,8 +177,8 @@ Directories nest inside one another. Each <code>/</code> in the path above denot
 directories are “above” or “below” the present file path to navigate with the
 command line.</p>
 <p>The top-most directory in your computer is called the <strong>root</strong>. Unix systems
-denote it with the <code>/</code> character. It’s like the trunk of a tree: every directory
-in your computer branches off from it.</p>
+denote it with the <code>/</code> character. It’s like the trunk of a tree: every
+directory in your computer branches off from it.</p>
 <p>A complication arises from the fact that directories can also branch off from
 each other. Whenever you make a folder within another folder – or a
 <strong>subdirectory</strong> – you’ve created another branch in the tree, one which is at
@@ -195,11 +196,11 @@ be using during our live session:</p>
     │   └── level_3             third subdirectory, below level_2a and level_2b
     │       └── 1.txt           file in the third subdirectory
     └── wrong_name.txt          file in first subdirectory</code></pre>
-<p>As you can see, this can get complicated! When you’re first getting started with
-the command line, it’s easy to feel a little lost and forget where you are in
-your computer. We’ll discuss some strategies to help with this in the live
-session, but know for the moment that the <code>pwd</code> command will always tell you where
-you are relative to the root:</p>
+<p>As you can see, this can get complicated! When you’re first getting started
+with the command line, it’s easy to feel a little lost and forget where you are
+in your computer. We’ll discuss some strategies to help with this in the live
+session, but know for the moment that the <code>pwd</code> command will always tell you
+where you are relative to the root:</p>
 <pre><code>$ pwd
 /here/is/where/you/are/located/in/your/computer</code></pre>
 <p><strong>Note:</strong> on Windows, the root is usually called <code>C:</code> or <code>D:</code> and is designated
@@ -220,30 +221,31 @@ roots – something you’d need to be aware of when specifying your file paths.
 file path on the command line. Recall that the Unix-style path above:</p>
 <pre><code>$ pwd
 /here/is/where/you/are/located/in/your/computer</code></pre>
-<p>begins with <code>/</code>, which, again, is root. When you see a path that begins with <code>/</code>,
-it’s showing you the full, or <strong>absolute</strong> location of a directory or file. No
-matter where you are in your computer, no matter how deep into a series of
-subdirectories you may be, if you used this absolute path with a navigation
-command, you could go straight to the location it indicates.</p>
-<p>By contrast, a <strong>relative path</strong> is context-specific. It depends on wherever you
-are in your computer. Unix uses some shorthand for this:</p>
+<p>…begins with <code>/</code>, which, again, is root. When you see a path that begins with
+<code>/</code>, it’s showing you the full, or <strong>absolute</strong> location of a directory or
+file. No matter where you are in your computer, no matter how deep into a
+series of subdirectories you may be, if you used this absolute path with a
+navigation command, you could go straight to the location it indicates.</p>
+<p>By contrast, a <strong>relative path</strong> is context-specific. It depends on wherever
+you are in your computer. Unix uses some shorthand for this:</p>
 <ul>
 <li><code>.</code> denotes the current location in your computer; while</li>
 <li><code>..</code> denotes the directory above that location.</li>
 </ul>
-<p>Remember seeing these in the previous chapter with <code>ls -lha</code>? Your computer keeps
-track of its directories by placing these two symbols in every folder you create.
-You can thus use this shorthand to avoid having to type out the entire file path
-to a file. This is useful if you’re far away from <code>root</code>, or if, in a coding
-project, you are using files that are encapsulated in a specific directory
-structure. To continue with the example from above, if you’re at <code>computer</code>:</p>
+<p>Remember seeing these in the previous chapter with <code>ls -lha</code>? Your computer
+keeps track of its directories by placing these two symbols in every folder you
+create. You can thus use this shorthand to avoid having to type out the entire
+file path to a file. This is useful if you’re far away from <code>root</code>, or if, in a
+coding project, you are using files that are encapsulated in a specific
+directory structure. To continue with the example from above, if you’re at
+<code>computer</code>:</p>
 <pre><code>/here/is/where/you/are/located/in/your/computer
                                        ^^^^^^^^</code></pre>
 <p>And you want to get to <code>located</code>:</p>
 <pre><code>/here/is/where/you/are/located/in/your/computer
                        ^^^^^^^</code></pre>
-<p>You could use an absolute path to get there. To do so, you use the <code>cd</code> (“change
-directory”) command:</p>
+<p>You could use an absolute path to get there. To do so, you use the <code>cd</code>
+(“change directory”) command:</p>
 <pre><code>$ cd /here/is/where/you/are/located</code></pre>
 <p>If we were to represent the logic of this path, it would look like so:</p>
 <pre><code>root
@@ -270,13 +272,13 @@ directory”) command:</p>
                     │       └── your
                     │           └── computer
                     └───────────────┘</code></pre>
-<p>The relative path would take you three directories up from <code>computer</code>, which, as
-you can see above, is <code>located</code> (count the names between backslashes). That’s
-much shorter, but there’s a downside: those <code>..</code> sequences are pretty hard to
-read without context, and it’s easy to get confused. Clearly, there can sometimes
-be a trade-off between using absolute and relative paths, and in the workshop,
-we’ll talk about how to weigh such options (particularly when first beginning
-to use the command line).</p>
+<p>The relative path would take you three directories up from <code>computer</code>, which,
+as you can see above, is <code>located</code> (count the names between backslashes).
+That’s much shorter, but there’s a downside: those <code>..</code> sequences are pretty
+hard to read without context, and it’s easy to get confused. Clearly, there can
+sometimes be a trade-off between using absolute and relative paths, and in the
+workshop, we’ll talk about how to weigh such options (particularly when first
+beginning to use the command line).</p>
 </div>
 <div id="moving-data-around" class="section level2 hasAnchor" number="6.4">
 <h2><span class="header-section-number">6.4</span> Moving Data Around<a href="navigation.html#moving-data-around" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -291,8 +293,8 @@ file.txt  subdirectory</code></pre>
 <pre><code>$ mv ./file.txt ./subdirectory/file.txt</code></pre>
 <p>Note here that we’ve used <code>./</code> to specify that <code>file.txt</code> is in the <em>current</em>
 directory. Note too that we wrote out the <em>full filename</em> of <code>file.txt</code> after
-<code>subdirectory</code>. If you didn’t write out the full filename after <code>subdirectory</code> or
-use <code>./</code>, your CLI is usually smart enough to infer what you meant and would
+<code>subdirectory</code>. If you didn’t write out the full filename after <code>subdirectory</code>
+or use <code>./</code>, your CLI is usually smart enough to infer what you meant and would
 move <code>file.txt</code> to <code>subdirectory</code>:</p>
 <pre><code>$ mv file.txt subdirectory
 $ cd subdirectory
