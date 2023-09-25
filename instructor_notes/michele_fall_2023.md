@@ -87,6 +87,7 @@ Pieces of the Prompt:
 
  * `mmtobias` = user name
  * `LIBLAP-R90WC4S7` = computer
+ * `MINGW64` = the name of the terminal (you might not have this)
  * `~` = home directory
  * `$` = the command line is ready and waiting
  * Cursor = either a line or box, blinking or not - move it left or right with the arrows on your keyboard
@@ -162,4 +163,53 @@ See the reader for a list of common commands!
 
 
 
+
+
+New workflow:
+
+Navigate to where we want to make a new directory
+
+```
+cd D:/
+```
+
+Print the current working directory:
+
+```
+pwd
+```
+
+Make a new folder
+
+```
+mkdir cl_workshop
+```
+
+see what happened
+
+```
+ls
+```
+
+```
+ls cl_workshop
+```
+
+Let's download an image from the DataLab website. Go to datalab.ucdavis.edu and download any image you like to this new directory.
+
+Let's make a new folder in our workshop folder to hold images:
+
+```
+cd cl_workshop/
+mkdir images
+ls
+```
+
+Let's move the image we just downloaded into our new images folder!
+
+```
+mv ./datalab_logo_square-square.png ./images/datalab_logo_square-square.png
+```
+
+Note: ./ means we're using the current directory so we don't have to write it all out
 
