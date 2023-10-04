@@ -256,29 +256,29 @@ $ cd ../valhalla_california
 Navigate to where we want to make a new directory
 
 ```
-cd D:/
+$ cd D:/
 ```
 
 Print the current working directory:
 
 ```
-pwd
+$ pwd
 ```
 
 Make a new folder
 
 ```
-mkdir cl_workshop
+$ mkdir cl_workshop
 ```
 
 see what happened
 
 ```
-ls
+$ ls
 ```
 
 ```
-ls cl_workshop
+$ ls cl_workshop
 ```
 
 Let's download an image from the DataLab website. Go to datalab.ucdavis.edu and download any image you like to this new directory.
@@ -286,15 +286,15 @@ Let's download an image from the DataLab website. Go to datalab.ucdavis.edu and 
 Let's make a new folder in our workshop folder to hold images:
 
 ```
-cd cl_workshop/
-mkdir images
-ls
+$ cd cl_workshop/
+$ mkdir images
+$ ls
 ```
 
 Let's move the image we just downloaded into our new images folder!
 
 ```
-mv ./datalab_logo_square-square.png ./images/datalab_logo_square-square.png
+$ mv ./datalab_logo_square-square.png ./images/datalab_logo_square-square.png
 ```
 
 Note: ./ means we're using the current directory so we don't have to write it all out
@@ -314,20 +314,20 @@ Note: ./ means we're using the current directory so we don't have to write it al
 Let's get more information about our image file:
 
 ```
-cd /d/cl_workshop
+$ cd /d/cl_workshop
 
-file ./images/datalab_logo_square-square.png./images/datalab_logo_square-square.png
+$ file ./images/datalab_logo_square-square.png./images/datalab_logo_square-square.png
 
-file example.txt
+$ file example.txt
 
 ```
 
 Let's look inside a text file:
 
 ```
-cat example.txt
+$ cat example.txt
 
-head example.txt
+$ head example.txt
 ```
 
 `cat` is short for concatenate and prints all of the file to the screen.
@@ -344,7 +344,7 @@ Let's make a text file and add text to it!
 `vi` followed by a file name will open the file, and if the file doens't exist yet, it will make it.
 
 ```
-vi hello.txt
+$ vi hello.txt
 ```
 
 Vim has 2 modes:
@@ -374,11 +374,11 @@ Now we'll learn about how to remove files - `rm`
 Let's delete the text file we just created with Vim.
 
 ```
-pwd
+$ pwd
 
-ls
+$ ls
 
-rm hello.txt
+$ rm hello.txt
 
 ```
 
