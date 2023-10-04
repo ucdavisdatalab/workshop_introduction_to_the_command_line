@@ -111,9 +111,10 @@ Let's look at the contents of one folder:
 
 ```
 $ ls Zotero
+$ ls valhalla_california
 ```
 
-Let's get even more information using flags
+Let's get even more information using flags. Use a flag by adding `-` and then a character or string of characters
 
 l = long listing format
 h = human-readable (not H)
@@ -121,6 +122,7 @@ a = all - show all the files including hidden ones
 
 ```
 $ ls -lha Zotero 
+$ ls -lha valhalla_california
 ```
 
 Output explanation:
@@ -129,6 +131,20 @@ Output explanation:
  * date
  * permissions = on the left
  * file size
+ 
+Permissions:
+ * r = read
+ * w = write
+ * x = execute
+ 
+Dot files:
+Example: .config or .gitignore
+
+We'll learn more about these in a minute:
+`.` means same directory
+`..` means go up a directory
+
+
 
 ### Command Syntax
 
@@ -155,17 +171,87 @@ This will not:
 See the reader for a list of common commands!
 
 
-### When Problems Arise
+### Error Messages: When Problems Arise
+
+Read the error messages. They are designed to help you. Most of the time they help.
+
+What happens if you ask ls to show a directory that doesn't exist?
+
+```
+$ ls no_name
+
+```
+
+What happens if you write a command that doesn't exist?
+
+```
+$ echo"hello"
+```
+
+Sometimes you can't interpret what the error is. Search engines can help.
+
+
+How do you stop a CLI process? **CTRL + C** (you might know this as "copy" but it means "interrupt" to the command line.)
+
+**CAUTION:** there is no "undo" for command line. Be cautious when you are modifying and deleting things on your computer.
 
 
 
 
+## Navigation & File Paths
+
+You're used to using your mouse to navigate and click on things, but with the command line we'll use our keyboard to do this.
+
+### File Paths
+
+**Files** are chunks of data on your computer.
+
+**Directories** are the folders they live in. Directories exist in a **directory structure** - a hierarchical organization of folders (i.e. folders can be inside other folders).
+
+A **Path** is the address for a given directory or file. It's a sequence of folders to navigate to locate a place in your directory structure.
+
+Example directory: workshop/data/trees.csv
+
+Each / in a path denotes a new level in the directory structure - directories can be higher or lower than another.
+
+**Root** is the top-most directory - denoted with / - think of this as the trunk of a tree and the rest of the structure descends below it.
+
+`pwd` tells you your current working directory (path) relative to the root.
+
+### Absolute vs. Relative Paths
+
+There are two ways to write paths: Absolute and Relative
+
+**Absolute Paths** = begin with / (root) and show the full path from the root.
+
+**Relative Paths** = context specific - it depends on where you are in your directory structure
+ * Useful when a folder might change locations or computers - this often happens with GitHub repositories
+ 
+Shorthand to note:
+ * `.` = the current location
+ * `..` = one directory above the current location
 
 
+Let's try this some of the things we just learned:
 
+What folders do we have again?
+```
+$ ls
+```
 
+Let's change directories (go into a different folder) using a direct path:
 
-New workflow:
+```
+$ cd /c/Users/mmtobias/Zotero
+```
+
+Now let's try going up to the folder above and changing into a different folder using a relative path:
+
+```
+$ cd ../valhalla_california
+```
+
+## Moving Data Around
 
 Navigate to where we want to make a new directory
 
@@ -212,4 +298,101 @@ mv ./datalab_logo_square-square.png ./images/datalab_logo_square-square.png
 ```
 
 Note: ./ means we're using the current directory so we don't have to write it all out
+
+
+
+## Editing Files
+
+### Plain Text vs. Binary Files
+
+**Plain Text** = stored in human-readable form; typically a collection of characters (like UTF or ASCII)
+
+**Binary Text** = stored as a sequence of 0 and 1; no characters; not readable (example: try opening an image file in a text editor)
+
+### Inspecting a File
+
+Let's get more information about our image file:
+
+```
+cd /d/cl_workshop
+
+file ./images/datalab_logo_square-square.png./images/datalab_logo_square-square.png
+
+file example.txt
+
+```
+
+Let's look inside a text file:
+
+```
+cat example.txt
+
+head example.txt
+```
+
+`cat` is short for concatenate and prints all of the file to the screen.
+
+`head` prints the first 10 lines
+
+
+## Command Line Text Editors
+
+We'll work with a text editor that comes with Macs and Git Bash called **Vim**.
+
+Let's make a text file and add text to it!
+
+`vi` followed by a file name will open the file, and if the file doens't exist yet, it will make it.
+
+```
+vi hello.txt
+```
+
+Vim has 2 modes:
+ 1. **Normal** mode = starts in normal mode; command-based; no text editing
+ 2. **Insert** mode = lets us edit text.
+ 
+Change to insert mode: press **i** on your keyboard --> notice the bottom says **-- INSERT --**
+
+Now write some text.
+
+**ESC Key** returns to normal mode.
+
+Let's save! In Normal mode, type `:w` then hit enter --> note the message at the bottom of the window.
+
+Let's quit Vim now that we're done. Type `:q` then hit enter. --> back to the command line!
+
+Other options:
+	`:q!` exits without saving
+	`:wq` saves and then exits
+
+See the reader for more!
+
+## Cleaning Up
+
+Now we'll learn about how to remove files - `rm`
+
+Let's delete the text file we just created with Vim.
+
+```
+pwd
+
+ls
+
+rm hello.txt
+
+```
+
+Adding the `-r` (recursive) flag allows you to delete folders.
+
+**CAUTION:** Command line has NO undo. Adding the `-i` flag will use interactive mode, which will ask for confirmation before you delete anything.
+
+## Wrap Up
+
+We just scratched the surface of what's possible.
+
+I hope you have learned enough today to feel confident in continuing to learn and work with command line.
+
+
+
+
 
