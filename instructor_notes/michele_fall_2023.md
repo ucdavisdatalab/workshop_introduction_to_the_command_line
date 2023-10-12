@@ -39,7 +39,7 @@ By the end of the workshop, learners should be able to:
  I'm going to assume you're installed some form of Command Line Interface on your computer.
  
 
-### 3 Installation
+## 3 Installation
 
 We're skipping this because you've already done it.
 
@@ -59,7 +59,7 @@ Working with the command line requires some shifts in thinking if you're used to
  1. GUIs often handle things for us. With CLI, we often have to do some extra steps. Learning about how our computers work will help.
  2. For people who like to visualize things, the command line can feel like a mystery. How do you even know where to start or what it's doing? This gets easier with practice.
 
-## Command Line Basics
+## 5 Command Line Basics
 
 ### Start Your Command Line
 
@@ -198,7 +198,7 @@ How do you stop a CLI process? **CTRL + C** (you might know this as "copy" but i
 
 
 
-## Navigation & File Paths
+## 6 Navigation & File Paths
 
 You're used to using your mouse to navigate and click on things, but with the command line we'll use our keyboard to do this.
 
@@ -251,7 +251,7 @@ Now let's try going up to the folder above and changing into a different folder 
 $ cd ../valhalla_california
 ```
 
-## Moving Data Around
+### Moving Data Around
 
 Navigate to where we want to make a new directory
 
@@ -301,7 +301,7 @@ Note: ./ means we're using the current directory so we don't have to write it al
 
 
 
-## Editing Files
+## 7 Editing Files
 
 ### Plain Text vs. Binary Files
 
@@ -367,7 +367,7 @@ Other options:
 
 See the reader for more!
 
-## Cleaning Up
+### Cleaning Up
 
 Now we'll learn about how to remove files - `rm`
 
@@ -386,7 +386,7 @@ Adding the `-r` (recursive) flag allows you to delete folders.
 
 **CAUTION:** Command line has NO undo. Adding the `-i` flag will use interactive mode, which will ask for confirmation before you delete anything.
 
-## Wrap Up
+## 8 Wrap Up
 
 We just scratched the surface of what's possible.
 
